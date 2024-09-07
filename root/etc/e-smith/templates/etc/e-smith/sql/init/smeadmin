@@ -1,0 +1,160 @@
+#!/bin/bash
+
+# mysql
+if [ -d /var/lib/mysql/sme9admin ] && [ ! -d /var/lib/mysql/smeadmin ]; then
+    echo "Migrating existing sme9admin MySQL database."
+    mysqladmin create smeadmin
+    mysqldump sme9admin | mysql smeadmin
+    PASS=$(/sbin/e-smith/db configuration getprop smeadmind DbPassword)
+    mysql -e " grant all privileges on smeadmin.* to 'smeadmin'@'localhost' identified by '$PASS'"
+    mysqladmin flush-privileges
+elif [ -e /var/lib/mysql/smeadmin ]; then
+    # c'est une mise jour, on fait une upgrade de la base si besoin
+    sh /usr/share/doc/smeserver-smeadmin/update-mysql.sh
+else
+    #si c'est une freshinstall on cree la bd mysql
+    sh /usr/share/doc/smeserver-smeadmin/create-mysql.sh
+fi
+
+# rrd
+    # migrating previous sme9admin rrd
+    if [ -d /var/lib/sme9admin ] && [ ! -d /var/lib/smeadmin ]; then
+     echo "Migrating existing sme9admin RRDs files."
+     cp -vr /var/lib/sme9admin /var/lib/smeadmin
+    fi
+
+    #ADD more DS for version 1.5-10
+    #first we test if these DS are already in the sensors.rrd   
+    if [[ -f /var/lib/smeadmin/sensors.rrd ]]; then
+     rrdtool dump /var/lib/smeadmin/sensors.rrd > /tmp/new_file.xml
+     testDS=$(grep -w 'fspd2\|thd3\|thd4\|thd5\|thd6' /tmp/new_file.xml)
+     rm -f /tmp/new_file.xml
+    fi
+    # then since the DS are not in the sensors.rrd we create it
+    if [[ -d /var/lib/smeadmin ]] && [[ ! $testDS ]]; then
+       #if (fspd2,thd3,thd4,thd5,thd6) don't exist, then we create it without nuked the data already existent
+       /usr/share/doc/smeserver-smeadmin/add_ds_to_rrd.pl /var/lib/smeadmin sensors.rrd fspd2:GAUGE:600:0:10000
+       /usr/share/doc/smeserver-smeadmin/add_ds_to_rrd.pl /var/lib/smeadmin sensors.rrd thd3:GAUGE:600:0:100
+       /usr/share/doc/smeserver-smeadmin/add_ds_to_rrd.pl /var/lib/smeadmin sensors.rrd thd4:GAUGE:600:0:100
+       /usr/share/doc/smeserver-smeadmin/add_ds_to_rrd.pl /var/lib/smeadmin sensors.rrd thd5:GAUGE:600:0:100
+       /usr/share/doc/smeserver-smeadmin/add_ds_to_rrd.pl /var/lib/smeadmin sensors.rrd thd6:GAUGE:600:0:100
+
+
+   elif [[ ! -d /var/lib/smeadmin ]]; then
+    #si c'est une freshinstall on cree les rrd
+    sh /usr/share/doc/smeserver-smeadmin/create-rrd.sh
+   fi
+   if [[ ! -f /var/lib/smeadmin/qpsmtpd.rrd ]]; then
+    # si le rrd qpsmtpd existe pas (nouveauté SME9)
+    rrdtool create /var/lib/smeadmin/qpsmtpd.rrd -s 300 \
+    DS:check_basicheaders:GAUGE:600:0:U \
+    DS:check_goodrcptto:GAUGE:600:0:U \
+    DS:clamav:GAUGE:600:0:U \
+    DS:karma:GAUGE:600:0:U \
+    DS:tls_failed:GAUGE:600:0:U \
+    DS:rhsbl:GAUGE:600:0:U \
+    DS:check_earlytalker:GAUGE:600:0:U \
+    DS:resolvable_fromhost:GAUGE:600:0:U \
+    DS:dnsbl:GAUGE:600:0:U \
+    DS:fcrdns:GAUGE:600:0:U \
+    DS:spf:GAUGE:600:0:U \
+    DS:check_spamhelo:GAUGE:600:0:U \
+    DS:uribl:GAUGE:600:0:U \
+    DS:dmarc:GAUGE:600:0:U \
+    DS:auth_failed:GAUGE:600:0:U \
+    DS:total_denied:GAUGE:600:0:U \
+    DS:spam_denied:GAUGE:600:0:U \
+    DS:other_denied:GAUGE:600:0:U \
+    DS:spam_queued:GAUGE:600:0:U \
+    DS:queued:GAUGE:600:0:U \
+    DS:total:GAUGE:600:0:U \
+    RRA:AVERAGE:0.5:1:12 \
+    RRA:AVERAGE:0.5:1:72 \
+    RRA:AVERAGE:0.5:1:288 \
+    RRA:AVERAGE:0.5:6:336 \
+    RRA:AVERAGE:0.5:24:372 \
+    RRA:AVERAGE:0.5:288:365 \
+    RRA:MAX:0.5:1:12 \
+    RRA:MAX:0.5:1:72 \
+    RRA:MAX:0.5:1:288 \
+    RRA:MAX:0.5:6:336 \
+    RRA:MAX:0.5:24:372 \
+    RRA:MAX:0.5:288:365 \
+    RRA:MIN:0.5:1:12 \
+    RRA:MIN:0.5:1:72 \
+    RRA:MIN:0.5:1:288 \
+    RRA:MIN:0.5:6:336    \
+    RRA:MIN:0.5:24:372 \
+    RRA:MIN:0.5:288:365 
+
+   else
+    /usr/bin/rrdinfo /var/lib/smeadmin/qpsmtpd.rrd|grep auth_failed > /dev/null
+    if [ $? -eq 1 ]; then
+      /usr/share/doc/smeserver-smeadmin/add_ds_to_rrd.pl /var/lib/smeadmin qpsmtpd.rrd auth_failed:GAUGE:600:0:U
+    fi
+   fi
+   if  [[ ! -f /var/lib/smeadmin/qmail.rrd ]]; then
+    # nombre et raisons de connexions refusées ou acceptées et file d'attente
+    rrdtool create /var/lib/smeadmin/qmail.rrd -s 300 \
+    DS:local_failure:GAUGE:600:0:U \
+    DS:local_deferral:GAUGE:600:0:U \
+    DS:local_success:GAUGE:600:0:U \
+    DS:local_total:GAUGE:600:0:U \
+    DS:remote_failure:GAUGE:600:0:U \
+    DS:remote_deferral:GAUGE:600:0:U \
+    DS:remote_success:GAUGE:600:0:U \
+    DS:remote_total:GAUGE:600:0:U \
+    DS:local_queue:GAUGE:600:0:U \
+    DS:remote_queue:GAUGE:600:0:U \
+    RRA:AVERAGE:0.5:1:12 \
+    RRA:AVERAGE:0.5:1:72 \
+    RRA:AVERAGE:0.5:1:288 \
+    RRA:AVERAGE:0.5:6:336 \
+    RRA:AVERAGE:0.5:24:372 \
+    RRA:AVERAGE:0.5:288:365 \
+    RRA:MAX:0.5:1:12 \
+    RRA:MAX:0.5:1:72 \
+    RRA:MAX:0.5:1:288 \
+    RRA:MAX:0.5:6:336 \
+    RRA:MAX:0.5:24:372 \
+    RRA:MAX:0.5:288:365 \
+    RRA:MIN:0.5:1:12 \
+    RRA:MIN:0.5:1:72 \
+    RRA:MIN:0.5:1:288 \
+    RRA:MIN:0.5:6:336    \
+    RRA:MIN:0.5:24:372 \
+    RRA:MIN:0.5:288:365 
+    fi
+   if  [[ ! -f /var/lib/smeadmin/altqmail.rrd ]]; then
+    # nombre et raisons de connexions refusées ou acceptées et file d'attente
+    rrdtool create /var/lib/smeadmin/altqmail.rrd -s 300 \
+    DS:local_failure:GAUGE:600:0:U \
+    DS:local_deferral:GAUGE:600:0:U \
+    DS:local_success:GAUGE:600:0:U \
+    DS:local_total:GAUGE:600:0:U \
+    DS:remote_failure:GAUGE:600:0:U \
+    DS:remote_deferral:GAUGE:600:0:U \
+    DS:remote_success:GAUGE:600:0:U \
+    DS:remote_total:GAUGE:600:0:U \
+    DS:local_queue:GAUGE:600:0:U \
+    DS:remote_queue:GAUGE:600:0:U \
+    RRA:AVERAGE:0.5:1:12 \
+    RRA:AVERAGE:0.5:1:72 \
+    RRA:AVERAGE:0.5:1:288 \
+    RRA:AVERAGE:0.5:6:336 \
+    RRA:AVERAGE:0.5:24:372 \
+    RRA:AVERAGE:0.5:288:365 \
+    RRA:MAX:0.5:1:12 \
+    RRA:MAX:0.5:1:72 \
+    RRA:MAX:0.5:1:288 \
+    RRA:MAX:0.5:6:336 \
+    RRA:MAX:0.5:24:372 \
+    RRA:MAX:0.5:288:365 \
+    RRA:MIN:0.5:1:12 \
+    RRA:MIN:0.5:1:72 \
+    RRA:MIN:0.5:1:288 \
+    RRA:MIN:0.5:6:336    \
+    RRA:MIN:0.5:24:372 \
+    RRA:MIN:0.5:288:365
+    fi
+

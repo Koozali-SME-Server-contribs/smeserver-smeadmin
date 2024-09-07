@@ -1,0 +1,21 @@
+[Unit]
+Description=SME Admin Monitor Agent for Koozali SME Server
+Before=shutdown.target
+Conflicts=shutdown.target
+
+[Service]
+Type=forking
+Restart=no
+TimeoutSec=1min
+IgnoreSIGPIPE=no
+KillMode=process
+RemainAfterExit=yes
+
+PIDFile=/var/run/smeadmin.pid
+ExecStart=/usr/bin/smeadmind
+ExecReload=/usr/bin/kill -HUP $MAINPID
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=sme-server.target

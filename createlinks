@@ -1,0 +1,41 @@
+#! /usr/bin/perl -w
+
+use esmith::Build::CreateLinks qw(:all);
+
+
+
+# Links for the panel
+panel_link("smeadmin", "manager");
+#system("mkdir -p root/etc/e-smith/web/panels/manager/html/smeadmin");
+safe_symlink("/etc/e-smith/web/panels/manager/html/smeadmin", "root/etc/e-smith/web/panels/user/html/smeadmin");
+
+# Logrotate
+event_link("smeadmin-parselog","logrotate","15");
+#Creation of the event smeadmin-update
+for my $event (qw(
+     smeadmin-update
+     smeserver-smeadmin-update
+    ))
+    
+    {
+    safe_symlink("restart", "root/etc/e-smith/events/$event/services2adjust/mysql.init");
+    safe_symlink("restart", "root/etc/e-smith/events/$event/services2adjust/smeadmind");
+    safe_symlink("restart", "root/etc/e-smith/events/$event/services2adjust/lm_sensors");
+    }
+#integration of event for console-save & bootstrap-console-save
+for my $event (qw(
+      console-save
+    ))
+
+    {
+    safe_symlink("restart", "root/etc/e-smith/events/$event/services2adjust/smeadmind");
+    safe_symlink("restart", "root/etc/e-smith/events/$event/services2adjust/lm_sensors");
+    }
+
+#expand template
+templates2events("/etc/e-smith/sql/init/smeadmin", "smeserver-smeadmin-update");
+
+use esmith::Build::Backup qw(:all);
+backup_includes("smeserver-smeadmin", qw(
+/var/lib/smeadmin/
+));

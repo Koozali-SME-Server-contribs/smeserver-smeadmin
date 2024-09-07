@@ -1,0 +1,1364 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:117
+msgid "Graphs on one hour, average on 5mn."
+msgstr "Grafische Darstellung für eine Stunde, Durchschnittswert 5 Minuten."
+
+#: root/etc/e-smith/web/functions/smeadmin:118
+msgid "Graphs on six hours, average on 5mn."
+msgstr "Grafische Darstellung für sechs Stunden, Durchschnittswert 5 Minuten."
+
+#: root/etc/e-smith/web/functions/smeadmin:119
+msgid "Graphs on one day, average on 5mn."
+msgstr "Grafische Darstellung für einen Tag, Durchschnittswert 5 Minuten."
+
+#: root/etc/e-smith/web/functions/smeadmin:120
+msgid "Graphs on three days, average on 30mn."
+msgstr "Grafische Darstellung für drei Tage, Durchschnittswert 30 Minuten."
+
+#: root/etc/e-smith/web/functions/smeadmin:121
+msgid "Graphs on one week, average on 30mn."
+msgstr "Grafische Darstellung für eine Woche, Durchschnittswert 30 Minuten."
+
+#: root/etc/e-smith/web/functions/smeadmin:122
+msgid "Graphs on one month, average on 2h"
+msgstr "Grafische Darstellung für einen Monat, Durchschnittswert 2 Stunden."
+
+#: root/etc/e-smith/web/functions/smeadmin:123
+msgid "Graphs on six months, average on 1d."
+msgstr "Grafische Darstellung für sechs Monate, Durchschnittswert 1 Tag."
+
+#: root/etc/e-smith/web/functions/smeadmin:124
+msgid "Graphs on one year, average on 1d"
+msgstr "Grafische Darstellung für ein Jahr, Durchschnittswert 1 Tag."
+
+#: root/etc/e-smith/web/functions/smeadmin:128
+msgid "Maximum number of incoming e-mails "
+msgstr "Maximale Anzahl eingehender Emails"
+
+#: root/etc/e-smith/web/functions/smeadmin:129
+msgid "Maximum number of outgoing e-mails "
+msgstr "Maximale Anzahl ausgehender Emails"
+
+#: root/etc/e-smith/web/functions/smeadmin:130
+msgid "Maximum % of hard disk usage "
+msgstr "Maximale Festplatten Temperatur"
+
+#: root/etc/e-smith/web/functions/smeadmin:131
+msgid "Maximum % of cpu usage "
+msgstr "Maximale Anzahl FTP Verbindungen"
+
+#: root/etc/e-smith/web/functions/smeadmin:132
+msgid "Maximum temperature for cpu and motherboard "
+msgstr "Maximale Temperatur für CPU und Motherboard"
+
+#: root/etc/e-smith/web/functions/smeadmin:133
+msgid "Maximum hard disk temperature "
+msgstr "Maximale Festplatten Temperatur"
+
+#: root/etc/e-smith/web/functions/smeadmin:134
+msgid "Maximum number of samba sessions "
+msgstr "Maximale Anzahl Samba Verbindungen"
+
+#: root/etc/e-smith/web/functions/smeadmin:135
+msgid "Maximum number of ssh sessions "
+msgstr "Maximale Anzahl SSH Verbindungen"
+
+#: root/etc/e-smith/web/functions/smeadmin:136
+msgid "Maximum number of ftp sessions "
+msgstr "Maximale Anzahl FTP Verbindungen"
+
+#: root/etc/e-smith/web/functions/smeadmin:137
+msgid "Maximum number of vpn sessions "
+msgstr "Maximale Anzahl VPN Verbindungen"
+
+#: root/etc/e-smith/web/functions/smeadmin:240
+msgid "View graphs on :"
+msgstr "Zeige Grafiken für:"
+
+#: root/etc/e-smith/web/functions/smeadmin:241
+msgid "server's hardware (sensors)\n"
+msgstr "Server Hardware Sensoren\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:242
+msgid "network use (connections,sessions,load)\n"
+msgstr "Netzwerk Nutzung (Verbindungen, Sitzungen, Last)\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:243
+msgid "system performance (cpu, memory, hard disk)\n"
+msgstr "System Leistung (CPU, Arbeitsspeicher, Festplatte)\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:244
+msgid "Advanced connection tests on services\n"
+msgstr "Detaillierter Test von Verbindungen zu Diensten\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:245
+msgid "Configuration of smeadmin\n"
+msgstr "Konfiguration von sme9admin\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:252
+msgid "Active tcp connections tcp with external(blue)/local(green) connections highlighted :\n"
+msgstr "Aktive TCP Verbindungen TCP mit externen (blauen) / lokalen (grünen) Verbindungen hervorgehoben:\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:254
+#: root/etc/e-smith/web/functions/smeadmin:468
+msgid "Local IP:port"
+msgstr "Lokaler IP:port"
+
+#: root/etc/e-smith/web/functions/smeadmin:254
+#: root/etc/e-smith/web/functions/smeadmin:468
+msgid "PID/Process"
+msgstr "PID/Prozess"
+
+#: root/etc/e-smith/web/functions/smeadmin:254
+msgid "Remote IP:port"
+msgstr "Entfernter IP:port"
+
+#: root/etc/e-smith/web/functions/smeadmin:254
+#: root/etc/e-smith/web/functions/smeadmin:386
+#: root/etc/e-smith/web/functions/smeadmin:400
+msgid "State"
+msgstr "Zustand"
+
+#: root/etc/e-smith/web/functions/smeadmin:271
+msgid "Stats :\n"
+msgstr "Statistiken: \n"
+
+#: root/etc/e-smith/web/functions/smeadmin:278
+msgid "Status of Linux software RAID :"
+msgstr "Status des Linux Software RAID:"
+
+#: root/etc/e-smith/web/functions/smeadmin:351
+msgid "Connected users :"
+msgstr "Verbundene Benutzer:"
+
+#: root/etc/e-smith/web/functions/smeadmin:352
+msgid "Command"
+msgstr "Befehl"
+
+#: root/etc/e-smith/web/functions/smeadmin:352
+msgid "From"
+msgstr "Von"
+
+#: root/etc/e-smith/web/functions/smeadmin:352
+msgid "Idle"
+msgstr "Leerlauf"
+
+#: root/etc/e-smith/web/functions/smeadmin:352
+#: root/etc/e-smith/web/functions/smeadmin:1107
+#: root/etc/e-smith/web/functions/smeadmin:1128
+#: root/etc/e-smith/web/functions/smeadmin:1150
+#: root/etc/e-smith/web/functions/smeadmin:1292
+#: root/etc/e-smith/web/functions/smeadmin:1313
+msgid "Login"
+msgstr "Login"
+
+#: root/etc/e-smith/web/functions/smeadmin:352
+msgid "Since"
+msgstr "Seit"
+
+#: root/etc/e-smith/web/functions/smeadmin:352
+msgid "TTY"
+msgstr "TTY"
+
+#: root/etc/e-smith/web/functions/smeadmin:370
+msgid "Web services"
+msgstr "Web Dienste"
+
+#: root/etc/e-smith/web/functions/smeadmin:371
+msgid "Administrative services"
+msgstr "Administrative Dienste"
+
+#: root/etc/e-smith/web/functions/smeadmin:372
+msgid "Network services"
+msgstr "Netzwerk Dienste"
+
+#: root/etc/e-smith/web/functions/smeadmin:373
+msgid "File-sharing services"
+msgstr "Dateifreigabe Dienste"
+
+#: root/etc/e-smith/web/functions/smeadmin:374
+msgid "E-mail services"
+msgstr "E-Mail Dienste"
+
+#: root/etc/e-smith/web/functions/smeadmin:375
+msgid "DNS services"
+msgstr "DNS Dienste"
+
+#: root/etc/e-smith/web/functions/smeadmin:376
+msgid "Authentication services"
+msgstr "Authentifizierungs Dienste"
+
+#: root/etc/e-smith/web/functions/smeadmin:377
+msgid "Misc. services"
+msgstr "Verschiedene Dienste"
+
+#: root/etc/e-smith/web/functions/smeadmin:378
+msgid "System services"
+msgstr "System Dienste"
+
+#: root/etc/e-smith/web/functions/smeadmin:384
+msgid "System services (Click on a service name for details) :\n"
+msgstr "System Dienste (klicken sie auf einen Service Namen für Details):\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:386
+#: root/etc/e-smith/web/functions/smeadmin:400
+msgid "Action"
+msgstr "Aktion"
+
+#: root/etc/e-smith/web/functions/smeadmin:386
+msgid "Nb process"
+msgstr "Nb Prozess"
+
+#: root/etc/e-smith/web/functions/smeadmin:386
+msgid "Service"
+msgstr "Dienst"
+
+#: root/etc/e-smith/web/functions/smeadmin:437
+msgid "Stopped"
+msgstr "Angehalten"
+
+#: root/etc/e-smith/web/functions/smeadmin:448
+msgid "Started"
+msgstr "Gestartet"
+
+#: root/etc/e-smith/web/functions/smeadmin:466
+msgid "Listening tcp sockets, and corresponding process :\n"
+msgstr "Höre TCP sockets, und zugehöriger Prozess: \n"
+
+#: root/etc/e-smith/web/functions/smeadmin:492
+msgid "Last update of ClamAV antivirus : %s.\n"
+msgstr "Letztes Update von ClamAV Antivirus: %s.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:496
+msgid "Warning ! Your antivirus may not be up-to-date.\n"
+msgstr "Warnung! Ihr Antivirus könnte nicht aktuell sein.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:509
+msgid "The database contains %s virus signatures.\n"
+msgstr "Die Datenbank enthält %s Virussignaturen.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:555
+msgid "Configuration of status e-mails.\n"
+msgstr "Konfigurierung von Status E-Mails.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:556
+msgid "If you set the frequency to 0, status e-mails are disabled. You can put only the username if the recipient is a local user.\n"
+msgstr "Wenn Sie die Häufigkeit auf 0 setzen, werden Status E-Mails deaktiviert. Sie können auch nur den Benutzernamen angeben, wenn es sich um einen lokalen Benutzer handelt.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:558
+msgid "Status e-mails recipient"
+msgstr "Status E-Mail Empfänger"
+
+#: root/etc/e-smith/web/functions/smeadmin:559
+msgid "Frequency of status e-mails (* 5min)"
+msgstr "Häufigkeit der Status E-Mails (* 5 Minuten)"
+
+#: root/etc/e-smith/web/functions/smeadmin:564
+msgid "Configuration of MySQL connection.\n"
+msgstr "Konfigurierung der MySQL Verbindungen.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:565
+msgid "You shall only modify these settings if you change the default values with phpMyAdmin or mysqladmin. These settings don't directly affect the configuration of MySQL."
+msgstr "Diese Einstellungen dürfen nur geändert werden, wenn Sie die Standardeinstellungen über phpMyAdmin oder mysqladmin ändern. Diese Einstellungen beeinflussen nicht direkt die Konfiguration von MySQL."
+
+#: root/etc/e-smith/web/functions/smeadmin:567
+msgid "Database"
+msgstr "Datenbank"
+
+#: root/etc/e-smith/web/functions/smeadmin:568
+msgid "MySQL user"
+msgstr "MySQL Benutzer"
+
+#: root/etc/e-smith/web/functions/smeadmin:569
+msgid "Password"
+msgstr "Passwort:"
+
+#: root/etc/e-smith/web/functions/smeadmin:573
+msgid "Configuration of network settings.\n"
+msgstr "Konfigurierung der Netzwerkeinstellungen.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:574
+msgid "You can specify the names of the network interfaces to monitor, the e-mail domains and adresses to count in the e-mail graph (list of domains or adresses separated by semicolons. \"me@domain.fr ; other-domain.com ; virtual.domain.fr\" - the primary domain name and virtual domains are already counted). You can already choose a target for the ping latency graph (www.google.fr, default gateway,...)"
+msgstr "Sie können die Namen der Netzwerkschnittstellen angeben, die überwacht werden soll, sowie die zu berücksichtigenden E-Mail Domänen und Adressen in der E-Mail Grafik (Liste der Domänen oder Adressen getrennt mit Semikolon).  \"me@domain.fr ; other-domain.com ; virtual.domain.fr\" - der primäre Domänename und virtuellen Domänen werden automatisch berücksichtigt.) Sie können bereits auch ein Ziel für die Ping Latenz Grafik angeben (www.google.fr, Default Gateway,...)"
+
+#: root/etc/e-smith/web/functions/smeadmin:577
+msgid "Other e-mail domains"
+msgstr "Andere E-Mail Domäne"
+
+#: root/etc/e-smith/web/functions/smeadmin:578
+msgid "Ping target"
+msgstr "Ping Ziel"
+
+#: root/etc/e-smith/web/functions/smeadmin:582
+msgid "Web panel configuration.\n"
+msgstr "Konfigurierung Web Panel.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:583
+msgid "You can set the format and size of graphs, and the bounds upon which pppoe and vpn connections need to be highlighted.\n"
+msgstr "Sie können das Format und die Größe der Grafik angeben, sowie die hervorzuhebenden Grenzen für PPPOE und VPN Verbindungen.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:587
+msgid "Image Format:"
+msgstr ""
+
+#: root/etc/e-smith/web/functions/smeadmin:589
+msgid "Graphs width"
+msgstr "Grafikbreite"
+
+#: root/etc/e-smith/web/functions/smeadmin:590
+msgid "Graphs height"
+msgstr "Grafikhöhe"
+
+#: root/etc/e-smith/web/functions/smeadmin:591
+msgid "Pppoe disconnection lasting more than (in minutes)"
+msgstr "PPPOE Verbindungsabbrüche, die länger dauern als (in Minuten)"
+
+#: root/etc/e-smith/web/functions/smeadmin:592
+msgid "Pppoe connection lasting less than (in hours)"
+msgstr "PPPOE Verbindungen, die kürzer dauern als (in Stunden)"
+
+#: root/etc/e-smith/web/functions/smeadmin:593
+msgid "Vpn connection lasting more than (in hours)"
+msgstr "VPN Verbindungen, die länger dauern als (in Stunden)"
+
+#: root/etc/e-smith/web/functions/smeadmin:597
+msgid "Configuration of hardware sensors.\n"
+msgstr "Konfigurierung der Hardware Sensoren.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:598
+msgid "For the hard disks, generally you have 'hda' or 'hdb' with IDE and 'sda' or 'sdb' with SATA/SCSI. If you have only on disk, let the second field blank. You can choose to activate the computing of the main directories' size of SME. (maybe long and resource-consuming on large disks). To find available sensors, execute 'sensors' in a shell, and look for the keywords corresponding to the working sensors ('temp1','CPU Temp','MB Temp','fan3',....). Let the fields blank if you have no sensors available.\n"
+msgstr "Für Festplatten wird normalerweise 'hda' oder 'hdb' für IDE und 'sda' oder 'sdb' für SATA/SCSI angezeigt. Wenn Sie nur eine Festplatte haben, lassen Sie das zweite Feld leer. Sie können die Größenberechnung für das SME Hauptverzeichnis aktivieren. (Dies kann lange dauern und ressourcenverbrauchend bei großen Festplatten sein.) Um verfügbare Sensoren zu finden, führen Sie 'sensors' auf der Konsole aus und schauen Sie nach den Schlüsselwörtern der arbeitenden Sensoren  ('temp1','CPU Temp','MB Temp','fan3',...). Lassen Sie die Felder leer, wenn keine Sensoren vorhanden sind.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:600
+msgid "Activate du -s:"
+msgstr "Aktiviere du -s:"
+
+#: root/etc/e-smith/web/functions/smeadmin:602
+msgid "First hard disk"
+msgstr "Erste Festplatte"
+
+#: root/etc/e-smith/web/functions/smeadmin:603
+msgid "Second hard disk"
+msgstr "Zweite Festplatte"
+
+#: root/etc/e-smith/web/functions/smeadmin:604
+msgid "Third hard disk"
+msgstr "Dritte Festplatte"
+
+#: root/etc/e-smith/web/functions/smeadmin:605
+msgid "Fourth hard disk"
+msgstr "Vierte Festplatte"
+
+#: root/etc/e-smith/web/functions/smeadmin:606
+msgid "Fifth hard disk"
+msgstr "Fünfte Festplatte"
+
+#: root/etc/e-smith/web/functions/smeadmin:607
+msgid "Sixth hard disk"
+msgstr "Sechste Festplatte"
+
+#: root/etc/e-smith/web/functions/smeadmin:609
+msgid "First sensor (cpu)"
+msgstr "Erster Sensor (CPU)"
+
+#: root/etc/e-smith/web/functions/smeadmin:610
+msgid "Second sensor (motherboard)"
+msgstr "Zweiter Sensor (Motherboard)"
+
+#: root/etc/e-smith/web/functions/smeadmin:611
+msgid "Third sensor (fan)"
+msgstr "Dritter Sensor (Lüfter)"
+
+#: root/etc/e-smith/web/functions/smeadmin:612
+msgid "Fourth sensor (fan)"
+msgstr "Vierter Sensor (Lüfter)"
+
+#: root/etc/e-smith/web/functions/smeadmin:618
+msgid "Configuration of alerts.\n"
+msgstr "Konfigurierung der Alarme.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:619
+msgid "You should notice that these values are not limits FOR the system, but just values beyond which an alert e-mail is sent. If you set the limit to 0, the alert is disabled. You can put only the username if the recipient is a local user.\n"
+msgstr "Sie sollten beachten, daß diese Werte keine Limits für das System sind, sondern bei Überschreiten nur Alarm E-Mails gesendet werden. Wenn das Limit auf 0 gesetzt wird, wird der Alarm abgeschaltet. Wenn der Empfänger ein lokaler Benutzer ist, reicht die Angabe des Benutzernamens.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:622
+msgid "Alert e-mails recipient "
+msgstr "Empfänger der Alarm E-Mails"
+
+#: root/etc/e-smith/web/functions/smeadmin:632
+#: root/etc/e-smith/web/functions/smeadmin:648
+msgid "Save"
+msgstr "Speichern"
+
+#: root/etc/e-smith/web/functions/smeadmin:644
+msgid "Alert configuration.\n"
+msgstr "Alarm Konfiguration.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:644
+msgid "Put 0 to desactivate it.\n"
+msgstr "Geben Sie 0 ein zur Deaktivierung.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:682
+#: root/etc/e-smith/web/functions/smeadmin:690
+msgid "\"%s\" is not a valid e-mail address.\n"
+msgstr "\"%s\" ist keine gültige E-Mail Adresse.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:702
+#: root/etc/e-smith/web/functions/smeadmin:727
+msgid "\"%s\" is not an integer numeric value for the setting '%s'.\n"
+msgstr "\"%s\" ist kein ganzer Zahlenwert zur Einstellung von '%s'.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:710
+msgid "Status e-mails have been disabled.\n"
+msgstr "Status E-Mails sind deaktiviert worden.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:751
+msgid "New settings have been saved."
+msgstr "Die neuen Einstellungen wurden gespeichert."
+
+#: root/etc/e-smith/web/functions/smeadmin:755
+msgid "The settings are the same, nothing has been modified.\n"
+msgstr "Die Einstellungen sind unverändert, nichts wurde geändert.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:763
+msgid "An error occured. Check the settings you provided."
+msgstr "Ein Fehler ist aufgetreten. Prüfen Sie Ihre Einstellungen."
+
+#: root/etc/e-smith/web/functions/smeadmin:766
+#: root/etc/e-smith/web/functions/smeadmin:840
+#: root/etc/e-smith/web/functions/smeadmin:870
+#: root/etc/e-smith/web/functions/smeadmin:949
+#: root/etc/e-smith/web/functions/smeadmin:1035
+#: root/etc/e-smith/web/functions/smeadmin:1076
+#: root/etc/e-smith/web/functions/smeadmin:1089
+#: root/etc/e-smith/web/functions/smeadmin:1467
+#: root/etc/e-smith/web/functions/smeadmin:1505
+#: root/etc/e-smith/web/functions/smeadmin:1607
+#: root/etc/e-smith/web/functions/smeadmin:1624
+#: root/etc/e-smith/web/functions/smeadmin:1727
+#: root/etc/e-smith/web/functions/smeadmin:1748
+#: root/etc/e-smith/web/functions/smeadmin:1894
+msgid "Back\n"
+msgstr "Zurück\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:851
+msgid "These differents tests may produce false positives, do not take care of them."
+msgstr "Diese verschiedenen Tests können falsche Positive produzieren, bitte ignorieren Sie diese."
+
+#: root/etc/e-smith/web/functions/smeadmin:852
+msgid "Execute them only if you know what they do, and how to analyse their results."
+msgstr "Führen Sie die nur aus, wenn Sie wissen, was Sie tun, und wie Sie die Ergebnisse analysieren können."
+
+#: root/etc/e-smith/web/functions/smeadmin:854
+msgid "Test http service"
+msgstr "Teste HTTP Dienst"
+
+#: root/etc/e-smith/web/functions/smeadmin:856
+msgid "Test samba service"
+msgstr "Teste Samba Dienst"
+
+#: root/etc/e-smith/web/functions/smeadmin:858
+msgid "Test network latency"
+msgstr "Teste Netzwerk Latenz"
+
+#: root/etc/e-smith/web/functions/smeadmin:860
+msgid "Test ftp service"
+msgstr "Teste FTP Dienst"
+
+#: root/etc/e-smith/web/functions/smeadmin:862
+msgid "Test ssh service"
+msgstr "Teste SSH Dienst"
+
+#: root/etc/e-smith/web/functions/smeadmin:864
+msgid "Test pop service"
+msgstr "Teste POP Dienst"
+
+#: root/etc/e-smith/web/functions/smeadmin:866
+msgid "Test smtp service"
+msgstr "Teste SMTP Dienst"
+
+#: root/etc/e-smith/web/functions/smeadmin:892
+msgid "Execution of 'http@' (should return html source code of server's homepage):"
+msgstr "Ausführen von 'http@' (sollte den HTML Quelltext der Server Homepage anzeigen):"
+
+#: root/etc/e-smith/web/functions/smeadmin:901
+msgid "Execution of 'smbcontrol smbd ping' (samba server answers giving its PID):"
+msgstr "Ausführen von 'smbcontrol smbd ping' (Samba Server antwortet mit seiner PID):"
+
+#: root/etc/e-smith/web/functions/smeadmin:910
+msgid "Execution of 'ping google.fr -c 1' (latency):"
+msgstr "Ausführen von 'ping google.fr -c 1' (Latenz):"
+
+#: root/etc/e-smith/web/functions/smeadmin:918
+msgid "Execution of 'echo \"SYST\" | nc %s 21' (ftp opened to the external network):"
+msgstr "Ausführen von 'echo \"SYST\" | nc %s 21' (FTP wird zum externen Netzwerk geöffnet):"
+
+#: root/etc/e-smith/web/functions/smeadmin:926
+msgid "Execution of 'echo \"hello\" | nc %s %s' (ssh opened to the external network):"
+msgstr "Ausführen von 'echo \"hello\" | nc %s 22' (SSH wird zum externen Netzwerk geöffnet):"
+
+#: root/etc/e-smith/web/functions/smeadmin:934
+msgid "Execution of 'echo \"quit\" | nc %s 110' (pop server running):"
+msgstr "Ausführen von 'echo \"quit\" | nc %s 110' (POP Server):"
+
+#: root/etc/e-smith/web/functions/smeadmin:942
+msgid "Execution of 'echo \"quit\" | nc -i 2 %s 25' (smtp server running):"
+msgstr "Ausführen von 'echo \"quit\" | nc -i 2 %s 25' (SMTP server):"
+
+#: root/etc/e-smith/web/functions/smeadmin:948
+msgid "Another test\n"
+msgstr "Ein weiterer Test\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:962
+#: root/etc/e-smith/web/functions/smeadmin:974
+msgid "Check MySQL connection settings.\n"
+msgstr "Prüfe die MySQL Verbindungseinstellungen.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:997
+msgid "one hour"
+msgstr "eine Stunde"
+
+#: root/etc/e-smith/web/functions/smeadmin:998
+msgid "six hours"
+msgstr "sechs Stunden"
+
+#: root/etc/e-smith/web/functions/smeadmin:999
+msgid "the day"
+msgstr "ein Tag"
+
+#: root/etc/e-smith/web/functions/smeadmin:1000
+msgid "three days"
+msgstr "drei Tage"
+
+#: root/etc/e-smith/web/functions/smeadmin:1001
+msgid "one week"
+msgstr "eine Woche"
+
+#: root/etc/e-smith/web/functions/smeadmin:1002
+msgid "one month"
+msgstr "ein Monat"
+
+#: root/etc/e-smith/web/functions/smeadmin:1003
+msgid "six months"
+msgstr "sechs Monate"
+
+#: root/etc/e-smith/web/functions/smeadmin:1004
+msgid "one year"
+msgstr "ein Jahr"
+
+#: root/etc/e-smith/web/functions/smeadmin:1066
+msgid "System load for the apache web server (httpd-e-smith & httpd-admin processes) on "
+msgstr "Systemlast des Apache Webservers (httpd-e-smith und httpd-admin Prozesse) auf"
+
+#: root/etc/e-smith/web/functions/smeadmin:1073
+#: root/etc/e-smith/web/functions/smeadmin:1086
+#: root/etc/e-smith/web/functions/smeadmin:1500
+#: root/etc/e-smith/web/functions/smeadmin:1620
+#: root/etc/e-smith/web/functions/smeadmin:1744
+msgid "View graphs on "
+msgstr "Zeige Grafiken von"
+
+#: root/etc/e-smith/web/functions/smeadmin:1098
+msgid "System load for the transparent http/ftp proxy squid on "
+msgstr "Systemlast für den transparenten http/ftp Proxy Squid auf"
+
+#: root/etc/e-smith/web/functions/smeadmin:1106
+#: root/etc/e-smith/web/functions/smeadmin:1127
+#: root/etc/e-smith/web/functions/smeadmin:1160
+#: root/etc/e-smith/web/functions/smeadmin:1277
+#: root/etc/e-smith/web/functions/smeadmin:1291
+#: root/etc/e-smith/web/functions/smeadmin:1312
+msgid "IP Address"
+msgstr "IP-Adresse"
+
+#: root/etc/e-smith/web/functions/smeadmin:1108
+#: root/etc/e-smith/web/functions/smeadmin:1162
+msgid "Hostname"
+msgstr "Hostname"
+
+#: root/etc/e-smith/web/functions/smeadmin:1109
+#: root/etc/e-smith/web/functions/smeadmin:1125
+#: root/etc/e-smith/web/functions/smeadmin:1143
+#: root/etc/e-smith/web/functions/smeadmin:1274
+#: root/etc/e-smith/web/functions/smeadmin:1290
+#: root/etc/e-smith/web/functions/smeadmin:1309
+msgid "Start"
+msgstr "Start"
+
+#: root/etc/e-smith/web/functions/smeadmin:1110
+#: root/etc/e-smith/web/functions/smeadmin:1126
+#: root/etc/e-smith/web/functions/smeadmin:1144
+#: root/etc/e-smith/web/functions/smeadmin:1275
+#: root/etc/e-smith/web/functions/smeadmin:1310
+msgid "End"
+msgstr "Ende"
+
+#: root/etc/e-smith/web/functions/smeadmin:1113
+msgid "Detailed list of the last times a host has connected to a samba share.\n"
+msgstr "Detaillierte Liste über die letzten Zeiten, bei der sich ein Host mit einer Samba Freigabe verbunden hat.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:1116
+msgid "System load for the samba server (smbd & nmbd processes) on "
+msgstr "Systemlast für den Samba Server (smbd & nmbd Prozesse) auf"
+
+#: root/etc/e-smith/web/functions/smeadmin:1129
+#: root/etc/e-smith/web/functions/smeadmin:1315
+msgid "Written data (Ko)"
+msgstr "Geschriebene Daten (Ko)"
+
+#: root/etc/e-smith/web/functions/smeadmin:1130
+#: root/etc/e-smith/web/functions/smeadmin:1316
+msgid "Read data (Ko)"
+msgstr "Gelesene Daten (Ko)"
+
+#: root/etc/e-smith/web/functions/smeadmin:1133
+msgid "Detailed list of the last connections (on the last 7 days) to the afp service (Apple File Protocol).\n"
+msgstr "Detaillierte Liste über die letzten Verbindungen (der letzten 7 Tage) mit dem AFP Dienst (Apple File Protocol).\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:1135
+msgid "System load for the appletalk server (atalkd, papd, afpd and cnid_metad processes)."
+msgstr "Systemlast für den Appletalk Server (atalkd, papd, afpd and cnid_metad Prozesse)."
+
+#: root/etc/e-smith/web/functions/smeadmin:1145
+#: root/etc/e-smith/web/functions/smeadmin:1276
+#: root/etc/e-smith/web/functions/smeadmin:1311
+msgid "Duration"
+msgstr "Dauer"
+
+#: root/etc/e-smith/web/functions/smeadmin:1146
+msgid "Client IP address"
+msgstr "Client IP-Adresse"
+
+#: root/etc/e-smith/web/functions/smeadmin:1147
+msgid "Client local IP address"
+msgstr "Client lokale IP-Adresse"
+
+#: root/etc/e-smith/web/functions/smeadmin:1148
+msgid "Incoming data (Ko)"
+msgstr "Eingehende Daten (Ko)"
+
+#: root/etc/e-smith/web/functions/smeadmin:1149
+msgid "Outgoing data (ko)"
+msgstr "Ausgehende Daten (Ko)"
+
+#: root/etc/e-smith/web/functions/smeadmin:1153
+msgid "Detailed list of vpn connections (Virtual Private Network).\n"
+msgstr "Detaillierte Liste der VPN Verbindungen (Virtual Private Network).\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:1161
+msgid "MAC Address"
+msgstr "MAC Adresse"
+
+#: root/etc/e-smith/web/functions/smeadmin:1163
+msgid "Date of renewal"
+msgstr "Datum der Erneuerung"
+
+#: root/etc/e-smith/web/functions/smeadmin:1166
+msgid "List of the last dhcp leases renewal (Dynamic Host Control Protocol).\n"
+msgstr "Liste der letzten DHCP Lease Erneuerung (Dynamic Host Control Protocol).\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:1178
+#: root/etc/e-smith/web/functions/smeadmin:1188
+#: root/etc/e-smith/web/functions/smeadmin:1248
+#: root/etc/e-smith/web/functions/smeadmin:1364
+#: root/etc/e-smith/web/functions/smeadmin:1419
+msgid "MySQL error : Impossible to prepare SQL query \"%s\" : %s\n"
+msgstr "MySQL Fehler: die SQL Abfrage ist unmöglich \"%s\" : %s\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:1179
+#: root/etc/e-smith/web/functions/smeadmin:1189
+#: root/etc/e-smith/web/functions/smeadmin:1249
+#: root/etc/e-smith/web/functions/smeadmin:1365
+#: root/etc/e-smith/web/functions/smeadmin:1420
+msgid "MySQL error : Can't execute query : %s\n"
+msgstr "MySQL Fehler: Die Abfrage kann nicht ausgeführt werden: %s\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:1204
+msgid "Traffic by Month"
+msgstr "Traffic pro Monat"
+
+#: root/etc/e-smith/web/functions/smeadmin:1207
+msgid "year-month"
+msgstr "Jahr-Monat"
+
+#: root/etc/e-smith/web/functions/smeadmin:1208
+msgid "IN (GB)"
+msgstr "Eingehend (GB)"
+
+#: root/etc/e-smith/web/functions/smeadmin:1209
+msgid "OUT (GB)"
+msgstr "Ausgehend (GB)"
+
+#: root/etc/e-smith/web/functions/smeadmin:1210
+msgid "TOTAL (GB)"
+msgstr "Total (GB)"
+
+#: root/etc/e-smith/web/functions/smeadmin:1278
+msgid "Connection peer"
+msgstr "Verbindungspartner"
+
+#: root/etc/e-smith/web/functions/smeadmin:1279
+msgid "Incoming data (MB)"
+msgstr "Eingehende Daten (Ko)"
+
+#: root/etc/e-smith/web/functions/smeadmin:1280
+msgid "Outgoing data (MB)"
+msgstr "Ausgehende Daten (Ko)"
+
+#: root/etc/e-smith/web/functions/smeadmin:1283
+msgid "Detailed list of ADSL/PPPoE connections.\n"
+msgstr "Detaillierte Liste der ADSL/PPPoE Verbindungen.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:1293
+#: root/etc/e-smith/web/functions/smeadmin:1314
+msgid "Connected ?"
+msgstr "Verbunden?"
+
+#: root/etc/e-smith/web/functions/smeadmin:1293
+#: root/etc/e-smith/web/functions/smeadmin:1314
+msgid "No"
+msgstr "Nein"
+
+#: root/etc/e-smith/web/functions/smeadmin:1293
+#: root/etc/e-smith/web/functions/smeadmin:1314
+msgid "Yes"
+msgstr "Ja"
+
+#: root/etc/e-smith/web/functions/smeadmin:1297
+msgid "Detailed list of ssh connections (Secure SHell).\n"
+msgstr "Detaillierte Liste der SSH Verbindungen (Secure Shell).\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:1322
+msgid "Detailed list of the last connections (on the last 7 days) to the ftp service (File Transfer Protocol).\n"
+msgstr "Detaillierte Liste der letzten Verbindungen (der letzten 7 Tage) zum FTP Dienst (File Transfer Protocol).\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:1348
+msgid "See the records on "
+msgstr "Siehe Aufzeichnungen auf"
+
+#: root/etc/e-smith/web/functions/smeadmin:1373
+#: root/etc/e-smith/web/functions/smeadmin:1378
+msgid "Connections which lasted "
+msgstr "Verbindungen, die dauerten"
+
+#: root/etc/e-smith/web/functions/smeadmin:1374
+msgid "more than %s hours are highlighted.\n"
+msgstr "mehr als %s Stunden werden hervorgehoben.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:1379
+msgid "less than %s hours are highlighted.\n"
+msgstr "weniger als %s Stunden werden hervorgehoben.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:1380
+msgid "Disconnections which lasted "
+msgstr "Verbindungsabbrüche, die dauerten"
+
+#: root/etc/e-smith/web/functions/smeadmin:1381
+msgid "more than %s minutes are highlighted.\n"
+msgstr "mehr als %s Minuten werden hervorgehoben.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:1385
+msgid " root connections are highlighted.\n"
+msgstr "Root Verbindungen werden hervorgehoben.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:1385
+msgid "Successful "
+msgstr "Erfolgreich"
+
+#: root/etc/e-smith/web/functions/smeadmin:1426
+msgid "Disconnection lasted more than %s minutes"
+msgstr "Verbindungsabbrüche, die mehr als %s Minuten dauerten"
+
+#: root/etc/e-smith/web/functions/smeadmin:1485
+msgid "Error at RRDs::graph(%s) : %s\n"
+msgstr "Fehler bei RRDs::graph(%s) : %s\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:1507
+msgid "Temperatures"
+msgstr "Temperaturen"
+
+#: root/etc/e-smith/web/functions/smeadmin:1520
+msgid "Hardware temperatures (Processor, motherboard)."
+msgstr "Hardware Temperaturen (Prozessor, Motherboard)."
+
+#: root/etc/e-smith/web/functions/smeadmin:1536
+msgid "Hard-disks Temperatures"
+msgstr "Festplatten Temperaturen"
+
+#: root/etc/e-smith/web/functions/smeadmin:1578
+msgid "Hard disks temperatures."
+msgstr "Festplatten Temperaturen."
+
+#: root/etc/e-smith/web/functions/smeadmin:1586
+#: root/etc/e-smith/web/functions/smeadmin:1591
+#: root/etc/e-smith/web/functions/smeadmin:1592
+msgid "Fan speed"
+msgstr "Lüftergeschwindigkeit"
+
+#: root/etc/e-smith/web/functions/smeadmin:1587
+#: root/etc/e-smith/web/functions/smeadmin:1593
+#: root/etc/e-smith/web/functions/smeadmin:1594
+#: root/etc/e-smith/web/functions/smeadmin:1595
+#: root/etc/e-smith/web/functions/smeadmin:1596
+#: root/etc/e-smith/web/functions/smeadmin:1597
+#: root/etc/e-smith/web/functions/smeadmin:1598
+#: root/etc/e-smith/web/functions/smeadmin:1599
+#: root/etc/e-smith/web/functions/smeadmin:1600
+msgid "Rpm"
+msgstr "Upm"
+
+#: root/etc/e-smith/web/functions/smeadmin:1604
+msgid "Processor fan speed."
+msgstr "Prozessor Lüftergeschwindigkeit."
+
+#: root/etc/e-smith/web/functions/smeadmin:1627
+msgid "Number of opened tcp connections for ssh, ftp, vpn, afp and netbios protocols."
+msgstr "Anzahl der geöffneten TCP Verbindungen für SSH, FTP, VPN, AFP, und NetBIOS Protokolle."
+
+#: root/etc/e-smith/web/functions/smeadmin:1628
+msgid "Opened connections"
+msgstr "Offene Verbindungen"
+
+#: root/etc/e-smith/web/functions/smeadmin:1645
+msgid "Number of dhcp leases renewals and opened samba shares."
+msgstr "Anzahl der DHCP Lease Erneuerungen und geöffneten Samba Freigaben."
+
+#: root/etc/e-smith/web/functions/smeadmin:1646
+msgid "Dhcp & Smbstatus"
+msgstr "DHCP und SMB Status"
+
+#: root/etc/e-smith/web/functions/smeadmin:1661
+msgid "Average and maximal ping with the selected target."
+msgstr "Durchschnittliche und maximale Pingzeiten für das ausgewählte Ziel."
+
+#: root/etc/e-smith/web/functions/smeadmin:1662
+msgid "Target ping latency"
+msgstr "Ping Latenz für das Ziel"
+
+#: root/etc/e-smith/web/functions/smeadmin:1670
+msgid "Avg ping"
+msgstr "Durchschnittlicher Ping"
+
+#: root/etc/e-smith/web/functions/smeadmin:1670
+msgid "Max ping"
+msgstr "Maximaler Ping"
+
+#: root/etc/e-smith/web/functions/smeadmin:1671
+msgid "Pkt loss"
+msgstr "Paketverlust"
+
+#: root/etc/e-smith/web/functions/smeadmin:1677
+msgid "Load on the local network interface."
+msgstr "Last auf der lokalen Netzwerkschnittstelle."
+
+#: root/etc/e-smith/web/functions/smeadmin:1678
+msgid "Local network load"
+msgstr "Lokale Netzwerklast"
+
+#: root/etc/e-smith/web/functions/smeadmin:1683
+#: root/etc/e-smith/web/functions/smeadmin:1698
+msgid "Incoming Kilobytes"
+msgstr "Eingehend Kilobytes"
+
+#: root/etc/e-smith/web/functions/smeadmin:1683
+#: root/etc/e-smith/web/functions/smeadmin:1698
+msgid "Outgoing Kilobytes"
+msgstr "Ausgehend Kilobytes"
+
+#: root/etc/e-smith/web/functions/smeadmin:1692
+msgid "Load on the external network interface (to internet)."
+msgstr "Last auf der externen Netzwerkschnittstelle (zum Internet)."
+
+#: root/etc/e-smith/web/functions/smeadmin:1693
+msgid "External network load"
+msgstr "Externe Netzwerklast"
+
+#: root/etc/e-smith/web/functions/smeadmin:1703
+msgid "Network load on the server except routing."
+msgstr "Netzwerklast auf dem Server mit Ausnahme Routing."
+
+#: root/etc/e-smith/web/functions/smeadmin:1705
+msgid "If the blue curve is :"
+msgstr "Wenn die blaue Kurve ist:"
+
+#: root/etc/e-smith/web/functions/smeadmin:1707
+msgid "positive => download from the internet"
+msgstr "Positiv --> Herunterladen aus dem Internet"
+
+#: root/etc/e-smith/web/functions/smeadmin:1708
+msgid "negative => upload from the local network"
+msgstr "Negativ --> Hochladen aus dem lokalen Netzwerk"
+
+#: root/etc/e-smith/web/functions/smeadmin:1710
+msgid "If the red curve is :"
+msgstr "Wenn die rote Kurve ist:"
+
+#: root/etc/e-smith/web/functions/smeadmin:1712
+msgid "positive => upload from the internet"
+msgstr "Positiv --> Hochladen aus dem Internet"
+
+#: root/etc/e-smith/web/functions/smeadmin:1713
+msgid "negative => download from the local network"
+msgstr "Negativ --> Herunterladen aus dem lokalen Netzwerk"
+
+#: root/etc/e-smith/web/functions/smeadmin:1717
+msgid "Network load on the server"
+msgstr "Netzwerklast auf dem Server"
+
+#: root/etc/e-smith/web/functions/smeadmin:1751
+msgid "Distribution of cpu usage for system, user and niced processes."
+msgstr "Verteilung der CPU Nutzung auf System, Benutzer und Niced Prozesse."
+
+#: root/etc/e-smith/web/functions/smeadmin:1752
+msgid "Cpu usage"
+msgstr "CPU Nutzung"
+
+#: root/etc/e-smith/web/functions/smeadmin:1765
+msgid "System load average on 1mn,5mn,15mn compared to cpu usage."
+msgstr "System Lastdurchschnitt über 1 Minute, 5 Minuten, 15 Minuten im Vergleich zu CPU Nutzung."
+
+#: root/etc/e-smith/web/functions/smeadmin:1766
+msgid "System load / Cpu %"
+msgstr "Systemlast / CPU %"
+
+#: root/etc/e-smith/web/functions/smeadmin:1786
+msgid "Number of running processes on the server, and kernel run queue size."
+msgstr "Anzahl der laufenden Prozesse auf dem Server sowie Kernel Run Queue Size"
+
+#: root/etc/e-smith/web/functions/smeadmin:1787
+msgid "Number of processes / run queue size"
+msgstr "Anzahl der Prozesse / Run Queue Size"
+
+#: root/etc/e-smith/web/functions/smeadmin:1793
+msgid "Processes"
+msgstr "Prozesse"
+
+#: root/etc/e-smith/web/functions/smeadmin:1793
+msgid "Run queue"
+msgstr "Run Queue"
+
+#: root/etc/e-smith/web/functions/smeadmin:1800
+msgid "Server uptime."
+msgstr "Serverlaufzeit"
+
+#: root/etc/e-smith/web/functions/smeadmin:1801
+#: root/etc/e-smith/web/functions/smeadmin:1806
+msgid "Uptime"
+msgstr "Laufzeit"
+
+#: root/etc/e-smith/web/functions/smeadmin:1802
+msgid "Days"
+msgstr "Tage"
+
+#: root/etc/e-smith/web/functions/smeadmin:1812
+msgid "Detailed usage of the server memory."
+msgstr "Detaillierte Benutzung des Serverspeichers."
+
+#: root/etc/e-smith/web/functions/smeadmin:1813
+msgid "Memory usage"
+msgstr "Speichernutzung"
+
+#: root/etc/e-smith/web/functions/smeadmin:1814
+#: root/etc/e-smith/web/functions/smeadmin:1835
+#: root/etc/e-smith/web/functions/smeadmin:1867
+msgid "Bytes"
+msgstr "Bytes"
+
+#: root/etc/e-smith/web/functions/smeadmin:1821
+msgid "Buffers"
+msgstr "Buffer"
+
+#: root/etc/e-smith/web/functions/smeadmin:1821
+msgid "Cached"
+msgstr "Cached"
+
+#: root/etc/e-smith/web/functions/smeadmin:1821
+#: root/etc/e-smith/web/functions/smeadmin:1840
+#: root/etc/e-smith/web/functions/smeadmin:1877
+msgid "Used"
+msgstr "Verwendet"
+
+#: root/etc/e-smith/web/functions/smeadmin:1822
+#: root/etc/e-smith/web/functions/smeadmin:1840
+#: root/etc/e-smith/web/functions/smeadmin:1877
+msgid "Free"
+msgstr "Frei"
+
+#: root/etc/e-smith/web/functions/smeadmin:1822
+#: root/etc/e-smith/web/functions/smeadmin:1840
+#: root/etc/e-smith/web/functions/smeadmin:1995
+msgid "Total"
+msgstr "Gesamt"
+
+#: root/etc/e-smith/web/functions/smeadmin:1833
+msgid "Swap usage (virtual memory) on the server's hard disk."
+msgstr "Swap Nutzung (virtueller Speicher) der Server Festplatte."
+
+#: root/etc/e-smith/web/functions/smeadmin:1834
+msgid "Swap usage"
+msgstr "Swap Nutzung"
+
+#: root/etc/e-smith/web/functions/smeadmin:1849
+msgid "Amount of raw data read/written on the hard disk."
+msgstr "Menge Rohdaten Lesen/Schreiben auf der Festplatte"
+
+#: root/etc/e-smith/web/functions/smeadmin:1850
+msgid "Data written/read"
+msgstr ""
+
+#: root/etc/e-smith/web/functions/smeadmin:1851
+msgid "Blocks/s"
+msgstr "Blöcke"
+
+#: root/etc/e-smith/web/functions/smeadmin:1856
+msgid "Read"
+msgstr "Gelesen"
+
+#: root/etc/e-smith/web/functions/smeadmin:1856
+msgid "Written"
+msgstr "Geschrieben"
+
+#: root/etc/e-smith/web/functions/smeadmin:1866
+msgid "Hard disk usage"
+msgstr "Festplattennutzung"
+
+#: root/etc/e-smith/web/functions/smeadmin:1890
+msgid "Detailed usage of disk space (squid cache, mysql databases, log files, user files..)."
+msgstr "Detaillierte Nutzung des Festplattenplatzes (Squid Cache, MySQL Datenbanken, Log Dateien, Nutzer Dateien...)."
+
+#: root/etc/e-smith/web/functions/smeadmin:1891
+msgid "Disk space usage."
+msgstr "Festplattenplatz Nutzung."
+
+#: root/etc/e-smith/web/functions/smeadmin:1900
+msgid "Number of local/remote e-mails handled by the internal mail service (including other service generated e-mails)."
+msgstr "Anzahl der lokalen/entfernten E-Mails, die vom internen Maildienst gehandhabt werden (einschließlich der von Diensten erzeugten E-Mails)."
+
+#: root/etc/e-smith/web/functions/smeadmin:1901
+msgid "Local/Remote e-mails"
+msgstr "Lokale/Entfernte E-Mails"
+
+#: root/etc/e-smith/web/functions/smeadmin:1916
+#: root/etc/e-smith/web/functions/smeadmin:1949
+msgid "Total local e-mails"
+msgstr "Gesamte lokale E-Mails"
+
+#: root/etc/e-smith/web/functions/smeadmin:1917
+#: root/etc/e-smith/web/functions/smeadmin:1950
+msgid "Total remote e-mails"
+msgstr "Gesamte entfernte E-Mails"
+
+#: root/etc/e-smith/web/functions/smeadmin:1919
+#: root/etc/e-smith/web/functions/smeadmin:1952
+msgid "Remote e-mail success"
+msgstr "Entfernte E-Mail erfolgreich"
+
+#: root/etc/e-smith/web/functions/smeadmin:1920
+#: root/etc/e-smith/web/functions/smeadmin:1953
+msgid "Remote e-mail deferral"
+msgstr "Entfernte E-Mail Verzögerung"
+
+#: root/etc/e-smith/web/functions/smeadmin:1921
+#: root/etc/e-smith/web/functions/smeadmin:1954
+msgid "Remote e-mail failure"
+msgstr "Entfernte E-Mail Fehler"
+
+#: root/etc/e-smith/web/functions/smeadmin:1923
+#: root/etc/e-smith/web/functions/smeadmin:1956
+msgid "Local queue"
+msgstr "Lokale Queue"
+
+#: root/etc/e-smith/web/functions/smeadmin:1924
+#: root/etc/e-smith/web/functions/smeadmin:1957
+msgid "Remote queue"
+msgstr "Entfernte Queue"
+
+#: root/etc/e-smith/web/functions/smeadmin:1933
+msgid "Number of remote e-mails handled by the alternative mail service (altqmail)."
+msgstr "Anzahl der lokalen/entfernten E-Mails, die vom internen Maildienst gehandhabt werden (einschließlich der von Diensten erzeugten E-Mails)."
+
+#: root/etc/e-smith/web/functions/smeadmin:1934
+msgid "Remote e-mails (altqmail)"
+msgstr "Entfernte E-Mail Fehler"
+
+#: root/etc/e-smith/web/functions/smeadmin:1967
+msgid "Number of incoming  e-mail connections to qpsmtpd services (outside of server incoming e-mails) and amount of spam/viruses filtered."
+msgstr "Anzahl der eingehenden E-Mail Verbindungen zum qpsmtpd Service (ohne die auf dem Server eingehenden E-Mails) und Menge des gefilterten Spam/Virus."
+
+#: root/etc/e-smith/web/functions/smeadmin:1968
+msgid "Incoming qpsmtpd connections spam/virus/e-mails"
+msgstr "Eingehende qpsmtpd Verbindungen Spam/Virus/E-Mails"
+
+#: root/etc/e-smith/web/functions/smeadmin:1996
+msgid "Total accepted e-mails"
+msgstr "Gesamte angenommene E-Mails"
+
+#: root/etc/e-smith/web/functions/smeadmin:1997
+#: root/etc/e-smith/web/functions/smeadmin:1998
+msgid "Accepted e-mails"
+msgstr "Angenommene E-Mails"
+
+# Auch "anstehen", "(sich) einreihen"
+#: root/etc/e-smith/web/functions/smeadmin:1997
+msgid "spam queued"
+msgstr "Spam in der Queue"
+
+# Auch "anstehen", "(sich) einreihen"
+#: root/etc/e-smith/web/functions/smeadmin:1998
+msgid "queued"
+msgstr "in dr Queue"
+
+#: root/etc/e-smith/web/functions/smeadmin:2000
+msgid "Total denied e-mails"
+msgstr "Gesamte abgelehnte E-Mails"
+
+#: root/etc/e-smith/web/functions/smeadmin:2001
+#: root/etc/e-smith/web/functions/smeadmin:2002
+#: root/etc/e-smith/web/functions/smeadmin:2003
+#: root/etc/e-smith/web/functions/smeadmin:2004
+#: root/etc/e-smith/web/functions/smeadmin:2005
+#: root/etc/e-smith/web/functions/smeadmin:2006
+#: root/etc/e-smith/web/functions/smeadmin:2007
+#: root/etc/e-smith/web/functions/smeadmin:2008
+#: root/etc/e-smith/web/functions/smeadmin:2009
+#: root/etc/e-smith/web/functions/smeadmin:2010
+#: root/etc/e-smith/web/functions/smeadmin:2011
+#: root/etc/e-smith/web/functions/smeadmin:2012
+#: root/etc/e-smith/web/functions/smeadmin:2013
+#: root/etc/e-smith/web/functions/smeadmin:2014
+#: root/etc/e-smith/web/functions/smeadmin:2015
+#: root/etc/e-smith/web/functions/smeadmin:2016
+#: root/etc/e-smith/web/functions/smeadmin:2017
+msgid "Denied e-mails"
+msgstr "Abgelehnte E-Mails"
+
+#: root/etc/e-smith/web/functions/smeadmin:2001
+msgid "check_spamhelo"
+msgstr "check_spamhelo"
+
+#: root/etc/e-smith/web/functions/smeadmin:2002
+msgid "other reasons"
+msgstr "andere Gründe"
+
+#: root/etc/e-smith/web/functions/smeadmin:2003
+msgid "tls failed"
+msgstr "TLS fehlgeschlagen"
+
+#: root/etc/e-smith/web/functions/smeadmin:2004
+msgid "auth failed"
+msgstr "TLS fehlgeschlagen"
+
+#: root/etc/e-smith/web/functions/smeadmin:2005
+msgid "spf"
+msgstr "spf"
+
+#: root/etc/e-smith/web/functions/smeadmin:2006
+msgid "resolvable_fromhost"
+msgstr "resolvable_fromhost"
+
+#: root/etc/e-smith/web/functions/smeadmin:2007
+msgid "karma"
+msgstr "Karma"
+
+#: root/etc/e-smith/web/functions/smeadmin:2008
+msgid "check_basicheaders"
+msgstr "check_basicheaders"
+
+#: root/etc/e-smith/web/functions/smeadmin:2009
+msgid "check_goodrcptto"
+msgstr "check_goodrcptto"
+
+#: root/etc/e-smith/web/functions/smeadmin:2010
+msgid "uribl"
+msgstr "uribl"
+
+#: root/etc/e-smith/web/functions/smeadmin:2011
+msgid "rhsbl"
+msgstr "rhsbl"
+
+#: root/etc/e-smith/web/functions/smeadmin:2012
+msgid "dnsbl"
+msgstr "dnsbl"
+
+#: root/etc/e-smith/web/functions/smeadmin:2013
+msgid "check_earlytalker"
+msgstr "check_earlytalker"
+
+#: root/etc/e-smith/web/functions/smeadmin:2014
+msgid "fcrdns"
+msgstr "fcrdns"
+
+#: root/etc/e-smith/web/functions/smeadmin:2015
+msgid "dmarc"
+msgstr "dmarc"
+
+#: root/etc/e-smith/web/functions/smeadmin:2016
+msgid "spam denied"
+msgstr "abgelehnter Spam"
+
+#: root/etc/e-smith/web/functions/smeadmin:2017
+msgid "virus"
+msgstr "Virus"
+
+#: root/usr/bin/smeadmind:1467
+msgid "Error at RRDs::update"
+msgstr "Fehler bei RRDs::update"
+
+#: root/usr/bin/smeadmind:1480
+msgid "Server status\n"
+msgstr "Server Status\n"
+
+#: root/usr/bin/smeadmind:1481
+msgid "Number of opened connections : "
+msgstr "Anzahl der geöffneten Verbindungen:"
+
+#: root/usr/bin/smeadmind:1509
+msgid "During the last 5 minutes, %s incoming e-mails were detected, "
+msgstr "Während der letzten 5 Minuten wurden %s eingehende E-Mails entdeckt, "
+
+#: root/usr/bin/smeadmind:1510
+msgid "you had set the alert limit to %s incoming e-mails.\n"
+msgstr "Sie haben die Alarmschwelle auf %s eingehende E-Mails gesetzt.\n"
+
+#: root/usr/bin/smeadmind:1511
+msgid "(Possible reasons : do you receive spam ? a mailbomb ? mailing-lists ?)\n"
+msgstr "(Mögliche Gründe: erhalten Sie Spam? Eine Mail-Bombe? Mailing-Listen?)\n"
+
+#: root/usr/bin/smeadmind:1512
+#: root/usr/bin/smeadmind:1524
+#: root/usr/bin/smeadmind:1536
+#: root/usr/bin/smeadmind:1548
+#: root/usr/bin/smeadmind:1560
+#: root/usr/bin/smeadmind:1570
+#: root/usr/bin/smeadmind:1580
+#: root/usr/bin/smeadmind:1590
+#: root/usr/bin/smeadmind:1600
+#: root/usr/bin/smeadmind:1610
+#: root/usr/bin/smeadmind:1620
+#: root/usr/bin/smeadmind:1630
+#: root/usr/bin/smeadmind:1640
+#: root/usr/bin/smeadmind:1650
+#: root/usr/bin/smeadmind:1664
+#: root/usr/bin/smeadmind:1676
+msgid "If you have access to the server-manager, use this link to modify the limit :\n"
+msgstr "Wenn Sie Zugang zum Server-Manager haben, benutzen Sie diesen Link, um das Limit zu ändern:\n"
+
+#: root/usr/bin/smeadmind:1521
+msgid "During the last 5 minutes, %s outgoing e-mails were detected, "
+msgstr "Während der letzten 5 Minuten wurden %s ausgehende E-Mails entdeckt, "
+
+#: root/usr/bin/smeadmind:1522
+msgid "you had set the alert limit to %s outgoing e-mails.\n"
+msgstr "Sie haben die Alarmschwelle auf %s ausgehende E-Mails gesetzt.\n"
+
+#: root/usr/bin/smeadmind:1523
+msgid "(Possible reasons : do you send spam ? administrate a mailing-list ?)\n"
+msgstr "(Mögliche Gründe: senden Sie Spam? Administrieren Sie eine Mailing-Liste?)\n"
+
+#: root/usr/bin/smeadmind:1533
+msgid "Your hard disk is %s %% full, "
+msgstr "Ihre Festplatte ist %s %% gefüllt,"
+
+#: root/usr/bin/smeadmind:1534
+#: root/usr/bin/smeadmind:1546
+msgid "you had set the alert limit to %s %%.\n"
+msgstr "Sie haben die Alarmschwelle auf %s %% gesetzt.\n"
+
+#: root/usr/bin/smeadmind:1535
+msgid "(Advice : free space by deleting temp files, or upgrade your disk space)\n"
+msgstr "(Ratschlag: schaffen Sie freien Platz durch Löschen von temporären Dateien, oder erweitern Sie Ihren Festplattenplatz)\n"
+
+#: root/usr/bin/smeadmind:1545
+msgid "Your processor is %s %% loaded, "
+msgstr "Ihr Prozessor ist %s %% ausgelastet,"
+
+#: root/usr/bin/smeadmind:1547
+msgid "(Possible reasons : Is there a crashed process ? an intense and prolonged activity on the server ?)\n"
+msgstr "(Mögliche Gründe: Gibt es einen abgestürzten Prozeß? Eine hohe und ausdauernde Aktivität auf dem Server?)\n"
+
+#: root/usr/bin/smeadmind:1557
+#: root/usr/bin/smeadmind:1567
+msgid "The temperature reported by sensor %s is %s degrees C, "
+msgstr "Die vom Sensor %s berichtete Temperatur ist %s Grad Celsius."
+
+#: root/usr/bin/smeadmind:1558
+#: root/usr/bin/smeadmind:1568
+#: root/usr/bin/smeadmind:1578
+#: root/usr/bin/smeadmind:1588
+#: root/usr/bin/smeadmind:1598
+#: root/usr/bin/smeadmind:1608
+#: root/usr/bin/smeadmind:1618
+#: root/usr/bin/smeadmind:1628
+msgid "you had set the alert limit to %s degrees C.\n"
+msgstr "Sie haben die Alarmschwelle auf %s Grad Celsius gesetzt.\n"
+
+#: root/usr/bin/smeadmind:1559
+#: root/usr/bin/smeadmind:1569
+msgid "(Advice : check the fans, and if the room is well ventilated or under AC.)\n"
+msgstr "(Ratschlag: überprüfen Sie die Lüfter, und daß der Raum gut belüftet ist und am Stromnetz ist.)\n"
+
+#: root/usr/bin/smeadmind:1577
+#: root/usr/bin/smeadmind:1587
+#: root/usr/bin/smeadmind:1597
+#: root/usr/bin/smeadmind:1607
+#: root/usr/bin/smeadmind:1617
+#: root/usr/bin/smeadmind:1627
+msgid "The temperature of %s hard disk is %s degrees C, "
+msgstr "Die Temperatur der Festplatte %s ist %s Grad Celsius."
+
+#: root/usr/bin/smeadmind:1579
+#: root/usr/bin/smeadmind:1589
+#: root/usr/bin/smeadmind:1599
+#: root/usr/bin/smeadmind:1609
+#: root/usr/bin/smeadmind:1619
+#: root/usr/bin/smeadmind:1629
+msgid "(Advice : check if the server case and the hard disks are well cooled.)\n"
+msgstr "(Ratschlag: überprüfen Sie, ob das Servergehäuse und die Festplatten gut gekühlt werden.)\n"
+
+#: root/usr/bin/smeadmind:1637
+msgid "There are %s opened connections to the SAMBA service, "
+msgstr "Es gibt %s geöffnete Verbindungen zum SAMBA Dienst."
+
+#: root/usr/bin/smeadmind:1638
+msgid "you had set the alert limit to %s connections.\n"
+msgstr "Sie haben die Alarmschwelle auf %s Verbindungen gesetzt.\n"
+
+#: root/usr/bin/smeadmind:1639
+msgid "(Advice : if you encounter problems accessing local neighboorhood, kill some connections.)\n"
+msgstr "(Ratschlag: wenn Sie Probleme haben, die lokale Umgebung zu erreichen, trennen Sie einige Verbindungen.)\n"
+
+#: root/usr/bin/smeadmind:1647
+msgid "There are %s opened SSH sessions on the server, "
+msgstr "Es gibt %s geöffnete SSH Sitzungen auf dem Server."
+
+#: root/usr/bin/smeadmind:1648
+#: root/usr/bin/smeadmind:1662
+#: root/usr/bin/smeadmind:1674
+msgid "you had set the alert limit to %s sessions.\n"
+msgstr "Sie haben die Alarmschwelle auf %s Sitzungen gesetzt.\n"
+
+#: root/usr/bin/smeadmind:1649
+msgid "(Advice : check if it is known administrative connections, and not hackers.)\n"
+msgstr "(Ratschlag: prüfen Sie, ob dies bekannte administrative Verbindungen, und keine Hacker sind.)\n"
+
+#: root/usr/bin/smeadmind:1661
+msgid "There are %s opened FTP sessions on the server, "
+msgstr "Es gibt %s geöffnete FTP Sitzungen auf dem Server."
+
+#: root/usr/bin/smeadmind:1663
+#: root/usr/bin/smeadmind:1675
+msgid "(Advice : check that it is authorized users only.)\n"
+msgstr "(Ratschlag: prüfen Sie, ob dies ein erlaubter Nutzer ist.)\n"
+
+#: root/usr/bin/smeadmind:1673
+msgid "There are %s opened VPN sessions on the server, "
+msgstr "Es gibt %s geöffnete VPN Sitzungen auf dem Server."
+
+#~ msgid "Donnees ecrites/lues"
+#~ msgstr "Daten geschrieben/gelesen"

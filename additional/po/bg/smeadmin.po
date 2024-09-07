@@ -1,0 +1,1363 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: bg\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:117
+msgid "Graphs on one hour, average on 5mn."
+msgstr "Графика за един час, осредняване на 5 мин."
+
+#: root/etc/e-smith/web/functions/smeadmin:118
+msgid "Graphs on six hours, average on 5mn."
+msgstr "Графика за шест часа, осредняване на 5 мин."
+
+#: root/etc/e-smith/web/functions/smeadmin:119
+msgid "Graphs on one day, average on 5mn."
+msgstr "Графика за един ден, осредняване на 5 мин."
+
+#: root/etc/e-smith/web/functions/smeadmin:120
+msgid "Graphs on three days, average on 30mn."
+msgstr "Графика за три дни, осредняване на 30 мин."
+
+#: root/etc/e-smith/web/functions/smeadmin:121
+msgid "Graphs on one week, average on 30mn."
+msgstr "Графика за една седмица, осредняване на 30 мин."
+
+#: root/etc/e-smith/web/functions/smeadmin:122
+msgid "Graphs on one month, average on 2h"
+msgstr "Графика за един месец, осредняване на 2 часа"
+
+#: root/etc/e-smith/web/functions/smeadmin:123
+msgid "Graphs on six months, average on 1d."
+msgstr "Графика за шест месеца, осредняване на 1 ден."
+
+#: root/etc/e-smith/web/functions/smeadmin:124
+msgid "Graphs on one year, average on 1d"
+msgstr "Графика за една година, осредняване на 1 ден"
+
+#: root/etc/e-smith/web/functions/smeadmin:128
+msgid "Maximum number of incoming e-mails "
+msgstr "Максимален брой входящи съобщения "
+
+#: root/etc/e-smith/web/functions/smeadmin:129
+msgid "Maximum number of outgoing e-mails "
+msgstr "Максимален брой изходящи съобщения "
+
+#: root/etc/e-smith/web/functions/smeadmin:130
+msgid "Maximum % of hard disk usage "
+msgstr "Максимален % на използване на твърдия диск "
+
+#: root/etc/e-smith/web/functions/smeadmin:131
+msgid "Maximum % of cpu usage "
+msgstr "Максимален % на използване на процесора "
+
+#: root/etc/e-smith/web/functions/smeadmin:132
+msgid "Maximum temperature for cpu and motherboard "
+msgstr "Максимална температура на процесора и дъното "
+
+#: root/etc/e-smith/web/functions/smeadmin:133
+msgid "Maximum hard disk temperature "
+msgstr "Максимална температура на твърдия диск "
+
+#: root/etc/e-smith/web/functions/smeadmin:134
+msgid "Maximum number of samba sessions "
+msgstr "Максимален брой на Samba сесии "
+
+#: root/etc/e-smith/web/functions/smeadmin:135
+msgid "Maximum number of ssh sessions "
+msgstr "Максимален брой SSH сесии "
+
+#: root/etc/e-smith/web/functions/smeadmin:136
+msgid "Maximum number of ftp sessions "
+msgstr "Максимален брой FTP сесии "
+
+#: root/etc/e-smith/web/functions/smeadmin:137
+msgid "Maximum number of vpn sessions "
+msgstr "Максимален брой VPN сесии "
+
+#: root/etc/e-smith/web/functions/smeadmin:240
+msgid "View graphs on :"
+msgstr "Виж графики за:"
+
+#: root/etc/e-smith/web/functions/smeadmin:241
+msgid "server's hardware (sensors)\n"
+msgstr "хардуер на сървъра (сензори)\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:242
+msgid "network use (connections,sessions,load)\n"
+msgstr "мрежа (връзки, сесии, натоварване)\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:243
+msgid "system performance (cpu, memory, hard disk)\n"
+msgstr "производителност (процесор, памет, диск)\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:244
+msgid "Advanced connection tests on services\n"
+msgstr "Подробни тестове за връзка с услуги\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:245
+msgid "Configuration of smeadmin\n"
+msgstr "Конфигурация на smeadmin\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:252
+msgid "Active tcp connections tcp with external(blue)/local(green) connections highlighted :\n"
+msgstr "Активни tcp връзки - външни връзки (в синьо)/локални връзки (в зелено):\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:254
+#: root/etc/e-smith/web/functions/smeadmin:468
+msgid "Local IP:port"
+msgstr "Локален IP:port"
+
+#: root/etc/e-smith/web/functions/smeadmin:254
+#: root/etc/e-smith/web/functions/smeadmin:468
+msgid "PID/Process"
+msgstr "PID/Process"
+
+#: root/etc/e-smith/web/functions/smeadmin:254
+msgid "Remote IP:port"
+msgstr "Отдалечен IP:port"
+
+#: root/etc/e-smith/web/functions/smeadmin:254
+#: root/etc/e-smith/web/functions/smeadmin:386
+#: root/etc/e-smith/web/functions/smeadmin:400
+msgid "State"
+msgstr "Статус"
+
+#: root/etc/e-smith/web/functions/smeadmin:271
+msgid "Stats :\n"
+msgstr "Статистика:\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:278
+msgid "Status of Linux software RAID :"
+msgstr "Състояние на Linux software RAID:"
+
+#: root/etc/e-smith/web/functions/smeadmin:351
+msgid "Connected users :"
+msgstr "Свързани потребители:"
+
+#: root/etc/e-smith/web/functions/smeadmin:352
+msgid "Command"
+msgstr "Команда"
+
+#: root/etc/e-smith/web/functions/smeadmin:352
+msgid "From"
+msgstr "От"
+
+#: root/etc/e-smith/web/functions/smeadmin:352
+msgid "Idle"
+msgstr "Idle"
+
+#: root/etc/e-smith/web/functions/smeadmin:352
+#: root/etc/e-smith/web/functions/smeadmin:1107
+#: root/etc/e-smith/web/functions/smeadmin:1128
+#: root/etc/e-smith/web/functions/smeadmin:1150
+#: root/etc/e-smith/web/functions/smeadmin:1292
+#: root/etc/e-smith/web/functions/smeadmin:1313
+msgid "Login"
+msgstr "Име"
+
+#: root/etc/e-smith/web/functions/smeadmin:352
+msgid "Since"
+msgstr "От"
+
+#: root/etc/e-smith/web/functions/smeadmin:352
+msgid "TTY"
+msgstr "TTY"
+
+#: root/etc/e-smith/web/functions/smeadmin:370
+msgid "Web services"
+msgstr "Уеб услуги"
+
+#: root/etc/e-smith/web/functions/smeadmin:371
+msgid "Administrative services"
+msgstr "Административни услуги"
+
+#: root/etc/e-smith/web/functions/smeadmin:372
+msgid "Network services"
+msgstr "Мрежови услуги"
+
+#: root/etc/e-smith/web/functions/smeadmin:373
+msgid "File-sharing services"
+msgstr "Услуги за споделяне на файлове"
+
+#: root/etc/e-smith/web/functions/smeadmin:374
+msgid "E-mail services"
+msgstr "Услуги за ел. поща"
+
+#: root/etc/e-smith/web/functions/smeadmin:375
+msgid "DNS services"
+msgstr "DNS услуги"
+
+#: root/etc/e-smith/web/functions/smeadmin:376
+msgid "Authentication services"
+msgstr "Услуги за удостоверяване"
+
+#: root/etc/e-smith/web/functions/smeadmin:377
+msgid "Misc. services"
+msgstr "Други услуги"
+
+#: root/etc/e-smith/web/functions/smeadmin:378
+msgid "System services"
+msgstr "Системни услуги"
+
+#: root/etc/e-smith/web/functions/smeadmin:384
+msgid "System services (Click on a service name for details) :\n"
+msgstr "Системни услуги (щракнете на името на услугата за повече):\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:386
+#: root/etc/e-smith/web/functions/smeadmin:400
+msgid "Action"
+msgstr "Действие"
+
+#: root/etc/e-smith/web/functions/smeadmin:386
+msgid "Nb process"
+msgstr "Процес NB"
+
+#: root/etc/e-smith/web/functions/smeadmin:386
+msgid "Service"
+msgstr "Услуга"
+
+#: root/etc/e-smith/web/functions/smeadmin:437
+msgid "Stopped"
+msgstr "Спряна"
+
+#: root/etc/e-smith/web/functions/smeadmin:448
+msgid "Started"
+msgstr "Пусната"
+
+#: root/etc/e-smith/web/functions/smeadmin:466
+msgid "Listening tcp sockets, and corresponding process :\n"
+msgstr "Слушащи tcp sockets и съответния процес:\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:492
+msgid "Last update of ClamAV antivirus : %s.\n"
+msgstr "Последна актуализация на ClamAV antivirus: %s.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:496
+msgid "Warning ! Your antivirus may not be up-to-date.\n"
+msgstr "Внимание! Антивируса не е актуален.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:509
+msgid "The database contains %s virus signatures.\n"
+msgstr "Базата данни съдържа %s сигнатури на вируси.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:555
+msgid "Configuration of status e-mails.\n"
+msgstr "Конфигурация на съобщенията за състояние.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:556
+msgid "If you set the frequency to 0, status e-mails are disabled. You can put only the username if the recipient is a local user.\n"
+msgstr "Ако зададете честотата на 0, съобщенията за състояние ще бъдат изключени. Можете да въведете само имена локални потребители като получатели.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:558
+msgid "Status e-mails recipient"
+msgstr "Получатели на съобщения"
+
+#: root/etc/e-smith/web/functions/smeadmin:559
+msgid "Frequency of status e-mails (* 5min)"
+msgstr "Честота на съобщенията (* 5 мин)"
+
+#: root/etc/e-smith/web/functions/smeadmin:564
+msgid "Configuration of MySQL connection.\n"
+msgstr "Конфигурация на връзката с MySQL.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:565
+msgid "You shall only modify these settings if you change the default values with phpMyAdmin or mysqladmin. These settings don't directly affect the configuration of MySQL."
+msgstr "Модифицирайте тези настройки ако промените стандартните стойности чрез phpMyAdmin или mysqladmin. Тези настройки няма директно да се отразят на конфигурацията на MySQL."
+
+#: root/etc/e-smith/web/functions/smeadmin:567
+msgid "Database"
+msgstr "База"
+
+#: root/etc/e-smith/web/functions/smeadmin:568
+msgid "MySQL user"
+msgstr "MySQL потребител"
+
+#: root/etc/e-smith/web/functions/smeadmin:569
+msgid "Password"
+msgstr "Парола"
+
+#: root/etc/e-smith/web/functions/smeadmin:573
+msgid "Configuration of network settings.\n"
+msgstr "Конфигурация на мрежовите настройки:\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:574
+msgid "You can specify the names of the network interfaces to monitor, the e-mail domains and adresses to count in the e-mail graph (list of domains or adresses separated by semicolons. \"me@domain.fr ; other-domain.com ; virtual.domain.fr\" - the primary domain name and virtual domains are already counted). You can already choose a target for the ping latency graph (www.google.fr, default gateway,...)"
+msgstr "Можете да зададете за наблюдение имената на мрежовите интерфейси, адреси и домейни за ел. поща, които ще бъдат броени в графиката за ел. поща (списък от домейни и адреси, разделени с \";\" - \"me@domain.fr ; other-domain.com ; virtual.domain.fr\" - основния домейн и виртуалните домейни са вече включени). Можете да посочите адрес за графиката за ping latency (www.google.fr, default gateway,...)"
+
+#: root/etc/e-smith/web/functions/smeadmin:577
+msgid "Other e-mail domains"
+msgstr "Други домейни за ел. поща"
+
+#: root/etc/e-smith/web/functions/smeadmin:578
+msgid "Ping target"
+msgstr "Адрес за ping"
+
+#: root/etc/e-smith/web/functions/smeadmin:582
+msgid "Web panel configuration.\n"
+msgstr "Конфигурация на уеб панела.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:583
+msgid "You can set the format and size of graphs, and the bounds upon which pppoe and vpn connections need to be highlighted.\n"
+msgstr "Можете да задавате формата и размера на графиките, и границите в които pppoe и vpn връзките трябва се оцветяват.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:587
+msgid "Image Format:"
+msgstr ""
+
+#: root/etc/e-smith/web/functions/smeadmin:589
+msgid "Graphs width"
+msgstr "Ширина на графиката"
+
+#: root/etc/e-smith/web/functions/smeadmin:590
+msgid "Graphs height"
+msgstr "Височина на графиката"
+
+#: root/etc/e-smith/web/functions/smeadmin:591
+msgid "Pppoe disconnection lasting more than (in minutes)"
+msgstr "Pppoe връзки продължаващи повече от (минути)"
+
+#: root/etc/e-smith/web/functions/smeadmin:592
+msgid "Pppoe connection lasting less than (in hours)"
+msgstr "Pppoe връзки продължаващи по-малко от (часа)"
+
+#: root/etc/e-smith/web/functions/smeadmin:593
+msgid "Vpn connection lasting more than (in hours)"
+msgstr "VPN връзки продължаващи повече от (часа)"
+
+#: root/etc/e-smith/web/functions/smeadmin:597
+msgid "Configuration of hardware sensors.\n"
+msgstr "Конфигурация на хардуерни сензори.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:598
+msgid "For the hard disks, generally you have 'hda' or 'hdb' with IDE and 'sda' or 'sdb' with SATA/SCSI. If you have only on disk, let the second field blank. You can choose to activate the computing of the main directories' size of SME. (maybe long and resource-consuming on large disks). To find available sensors, execute 'sensors' in a shell, and look for the keywords corresponding to the working sensors ('temp1','CPU Temp','MB Temp','fan3',....). Let the fields blank if you have no sensors available.\n"
+msgstr "За твърдите дискове, по принцип имате hda или hdb при IDE и sda или sdb при SATA/SCSI. Ако имате само един диск, оставете другото поле празно. Можете да изберете да изчислявате размера на основните папки на SMEServer. (може да бъде дълъг и ресурсоемък процес за големи дискове). За да откриете наличните сензори изпълнете 'sensors' в командния прозорец и търсете за ключови думи, съответстващи на работещите сензори ('temp1','CPU Temp','MB Temp','fan3',....). Оставете полето празно ако нямате налични сензори.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:600
+msgid "Activate du -s:"
+msgstr "Включване на du -s:"
+
+#: root/etc/e-smith/web/functions/smeadmin:602
+msgid "First hard disk"
+msgstr "Първи диск"
+
+#: root/etc/e-smith/web/functions/smeadmin:603
+msgid "Second hard disk"
+msgstr "Втори диск"
+
+#: root/etc/e-smith/web/functions/smeadmin:604
+msgid "Third hard disk"
+msgstr "Трети диск"
+
+#: root/etc/e-smith/web/functions/smeadmin:605
+msgid "Fourth hard disk"
+msgstr "Четвърти диск"
+
+#: root/etc/e-smith/web/functions/smeadmin:606
+msgid "Fifth hard disk"
+msgstr "Пети диск"
+
+#: root/etc/e-smith/web/functions/smeadmin:607
+msgid "Sixth hard disk"
+msgstr "Шести диск"
+
+#: root/etc/e-smith/web/functions/smeadmin:609
+msgid "First sensor (cpu)"
+msgstr "Първи сензор (CPU)"
+
+#: root/etc/e-smith/web/functions/smeadmin:610
+msgid "Second sensor (motherboard)"
+msgstr "Втори сензор (дъно)"
+
+#: root/etc/e-smith/web/functions/smeadmin:611
+msgid "Third sensor (fan)"
+msgstr "Трети сензор (охладител)"
+
+#: root/etc/e-smith/web/functions/smeadmin:612
+msgid "Fourth sensor (fan)"
+msgstr "Четвърти сензор (охладител)"
+
+#: root/etc/e-smith/web/functions/smeadmin:618
+msgid "Configuration of alerts.\n"
+msgstr "Конфигурация на аларми.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:619
+msgid "You should notice that these values are not limits FOR the system, but just values beyond which an alert e-mail is sent. If you set the limit to 0, the alert is disabled. You can put only the username if the recipient is a local user.\n"
+msgstr "Отбележете, че тези стойности не са лимити ЗА системата, а стойности извън които ще бъде пратено съобщение за аларма. Ако зададете лимит 0, алармите ще бъдат изключени. Можете да напишете само потребителското име ако получателят е локален.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:622
+msgid "Alert e-mails recipient "
+msgstr "Получател на аларми "
+
+#: root/etc/e-smith/web/functions/smeadmin:632
+#: root/etc/e-smith/web/functions/smeadmin:648
+msgid "Save"
+msgstr "Запис"
+
+#: root/etc/e-smith/web/functions/smeadmin:644
+msgid "Alert configuration.\n"
+msgstr "Конфигуриране на аларми.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:644
+msgid "Put 0 to desactivate it.\n"
+msgstr "Сложете 0 за да я изключите.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:682
+#: root/etc/e-smith/web/functions/smeadmin:690
+msgid "\"%s\" is not a valid e-mail address.\n"
+msgstr "\"%s\" не е валиден ел. адрес.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:702
+#: root/etc/e-smith/web/functions/smeadmin:727
+msgid "\"%s\" is not an integer numeric value for the setting '%s'.\n"
+msgstr "\"%s\" не е цяло число за настройката '%s'.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:710
+msgid "Status e-mails have been disabled.\n"
+msgstr "Ел. съобщения за състоянието са изключени.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:751
+msgid "New settings have been saved."
+msgstr "Новите настройки бяха запазени."
+
+#: root/etc/e-smith/web/functions/smeadmin:755
+msgid "The settings are the same, nothing has been modified.\n"
+msgstr "Настройките са същите, нищо не е променено.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:763
+msgid "An error occured. Check the settings you provided."
+msgstr "Възникна грешка. Проверете настройките."
+
+#: root/etc/e-smith/web/functions/smeadmin:766
+#: root/etc/e-smith/web/functions/smeadmin:840
+#: root/etc/e-smith/web/functions/smeadmin:870
+#: root/etc/e-smith/web/functions/smeadmin:949
+#: root/etc/e-smith/web/functions/smeadmin:1035
+#: root/etc/e-smith/web/functions/smeadmin:1076
+#: root/etc/e-smith/web/functions/smeadmin:1089
+#: root/etc/e-smith/web/functions/smeadmin:1467
+#: root/etc/e-smith/web/functions/smeadmin:1505
+#: root/etc/e-smith/web/functions/smeadmin:1607
+#: root/etc/e-smith/web/functions/smeadmin:1624
+#: root/etc/e-smith/web/functions/smeadmin:1727
+#: root/etc/e-smith/web/functions/smeadmin:1748
+#: root/etc/e-smith/web/functions/smeadmin:1894
+msgid "Back\n"
+msgstr "Назад\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:851
+msgid "These differents tests may produce false positives, do not take care of them."
+msgstr "Тези тестове е възможно да предизвикат фалшиви аларми, не им обръщайте внимание."
+
+#: root/etc/e-smith/web/functions/smeadmin:852
+msgid "Execute them only if you know what they do, and how to analyse their results."
+msgstr "Изпълнете ги само ако знаете какво правят и как да анализирате техните резултати."
+
+#: root/etc/e-smith/web/functions/smeadmin:854
+msgid "Test http service"
+msgstr "Тест на услугата http"
+
+#: root/etc/e-smith/web/functions/smeadmin:856
+msgid "Test samba service"
+msgstr "Тест на услугата samba"
+
+#: root/etc/e-smith/web/functions/smeadmin:858
+msgid "Test network latency"
+msgstr "Тест на мрежовата латентност"
+
+#: root/etc/e-smith/web/functions/smeadmin:860
+msgid "Test ftp service"
+msgstr "Тест на услугата ftp"
+
+#: root/etc/e-smith/web/functions/smeadmin:862
+msgid "Test ssh service"
+msgstr "Тест на услугата ssh"
+
+#: root/etc/e-smith/web/functions/smeadmin:864
+msgid "Test pop service"
+msgstr "Тест на услугата pop"
+
+#: root/etc/e-smith/web/functions/smeadmin:866
+msgid "Test smtp service"
+msgstr "Тест на услугата smtp"
+
+#: root/etc/e-smith/web/functions/smeadmin:892
+msgid "Execution of 'http@' (should return html source code of server's homepage):"
+msgstr "Изпълнение на 'http@' (трябва да върне html кода на главната страница на сървъра):"
+
+#: root/etc/e-smith/web/functions/smeadmin:901
+msgid "Execution of 'smbcontrol smbd ping' (samba server answers giving its PID):"
+msgstr "Изпълнение на 'smbcontrol smbd ping' (samba сървъра ще отговори с неговия PID):"
+
+#: root/etc/e-smith/web/functions/smeadmin:910
+msgid "Execution of 'ping google.fr -c 1' (latency):"
+msgstr "Изпълнение на 'ping google.fr' -c 1 (латентност):"
+
+#: root/etc/e-smith/web/functions/smeadmin:918
+msgid "Execution of 'echo \"SYST\" | nc %s 21' (ftp opened to the external network):"
+msgstr "Изпълнение на 'echo \"SYST\" | nc %s 21' (отваряне на ftp към външната мрежа):"
+
+#: root/etc/e-smith/web/functions/smeadmin:926
+msgid "Execution of 'echo \"hello\" | nc %s %s' (ssh opened to the external network):"
+msgstr "Изпълнение на 'echo \"hello\" | nc %s 22' (отваряне на ssh към външната мрежа):"
+
+#: root/etc/e-smith/web/functions/smeadmin:934
+msgid "Execution of 'echo \"quit\" | nc %s 110' (pop server running):"
+msgstr "Изпълнение на 'echo \"quit\" | nc %s 110' (pop сървъра работи):"
+
+#: root/etc/e-smith/web/functions/smeadmin:942
+msgid "Execution of 'echo \"quit\" | nc -i 2 %s 25' (smtp server running):"
+msgstr "Изпълнение на 'echo \"quit\" | nc -i 2 %s 25' (smtp сървъра работи):"
+
+#: root/etc/e-smith/web/functions/smeadmin:948
+msgid "Another test\n"
+msgstr "Друг тест\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:962
+#: root/etc/e-smith/web/functions/smeadmin:974
+msgid "Check MySQL connection settings.\n"
+msgstr "Проверка на настройките за връзка с MySQL.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:997
+msgid "one hour"
+msgstr "един час"
+
+#: root/etc/e-smith/web/functions/smeadmin:998
+msgid "six hours"
+msgstr "шест часа"
+
+#: root/etc/e-smith/web/functions/smeadmin:999
+msgid "the day"
+msgstr "един ден"
+
+#: root/etc/e-smith/web/functions/smeadmin:1000
+msgid "three days"
+msgstr "три дни"
+
+#: root/etc/e-smith/web/functions/smeadmin:1001
+msgid "one week"
+msgstr "седмица"
+
+#: root/etc/e-smith/web/functions/smeadmin:1002
+msgid "one month"
+msgstr "месец"
+
+#: root/etc/e-smith/web/functions/smeadmin:1003
+msgid "six months"
+msgstr "шест месеца"
+
+#: root/etc/e-smith/web/functions/smeadmin:1004
+msgid "one year"
+msgstr "година"
+
+#: root/etc/e-smith/web/functions/smeadmin:1066
+msgid "System load for the apache web server (httpd-e-smith & httpd-admin processes) on "
+msgstr "Натоварване на уеб сървъра apache (процеси httpd-e-smith и httpd-admin) за "
+
+#: root/etc/e-smith/web/functions/smeadmin:1073
+#: root/etc/e-smith/web/functions/smeadmin:1086
+#: root/etc/e-smith/web/functions/smeadmin:1500
+#: root/etc/e-smith/web/functions/smeadmin:1620
+#: root/etc/e-smith/web/functions/smeadmin:1744
+msgid "View graphs on "
+msgstr "Вижте графика за "
+
+#: root/etc/e-smith/web/functions/smeadmin:1098
+msgid "System load for the transparent http/ftp proxy squid on "
+msgstr "Натоварване на прозрачното http/ftp proxy squid за "
+
+#: root/etc/e-smith/web/functions/smeadmin:1106
+#: root/etc/e-smith/web/functions/smeadmin:1127
+#: root/etc/e-smith/web/functions/smeadmin:1160
+#: root/etc/e-smith/web/functions/smeadmin:1277
+#: root/etc/e-smith/web/functions/smeadmin:1291
+#: root/etc/e-smith/web/functions/smeadmin:1312
+msgid "IP Address"
+msgstr "IP адрес"
+
+#: root/etc/e-smith/web/functions/smeadmin:1108
+#: root/etc/e-smith/web/functions/smeadmin:1162
+msgid "Hostname"
+msgstr "Име на хоста"
+
+#: root/etc/e-smith/web/functions/smeadmin:1109
+#: root/etc/e-smith/web/functions/smeadmin:1125
+#: root/etc/e-smith/web/functions/smeadmin:1143
+#: root/etc/e-smith/web/functions/smeadmin:1274
+#: root/etc/e-smith/web/functions/smeadmin:1290
+#: root/etc/e-smith/web/functions/smeadmin:1309
+msgid "Start"
+msgstr "Начало"
+
+#: root/etc/e-smith/web/functions/smeadmin:1110
+#: root/etc/e-smith/web/functions/smeadmin:1126
+#: root/etc/e-smith/web/functions/smeadmin:1144
+#: root/etc/e-smith/web/functions/smeadmin:1275
+#: root/etc/e-smith/web/functions/smeadmin:1310
+msgid "End"
+msgstr "Край"
+
+#: root/etc/e-smith/web/functions/smeadmin:1113
+msgid "Detailed list of the last times a host has connected to a samba share.\n"
+msgstr "Подробен списък на времената на хостове последно вързали се за споделена папка от samba.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:1116
+msgid "System load for the samba server (smbd & nmbd processes) on "
+msgstr "Натоварване на samba сървъра (процеси smbd и nmbd) за "
+
+#: root/etc/e-smith/web/functions/smeadmin:1129
+#: root/etc/e-smith/web/functions/smeadmin:1315
+msgid "Written data (Ko)"
+msgstr "Записани данни (KB)"
+
+#: root/etc/e-smith/web/functions/smeadmin:1130
+#: root/etc/e-smith/web/functions/smeadmin:1316
+msgid "Read data (Ko)"
+msgstr "Прочетени данни (KB)"
+
+#: root/etc/e-smith/web/functions/smeadmin:1133
+msgid "Detailed list of the last connections (on the last 7 days) to the afp service (Apple File Protocol).\n"
+msgstr "Подробен списък на последните връзки (през последните 7 дни) към услугата afp (Apple File Protocol).\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:1135
+msgid "System load for the appletalk server (atalkd, papd, afpd and cnid_metad processes)."
+msgstr "Натоварване на сървъра appletalk (процеси atalkd, papd, afpd и cnid_metad)."
+
+#: root/etc/e-smith/web/functions/smeadmin:1145
+#: root/etc/e-smith/web/functions/smeadmin:1276
+#: root/etc/e-smith/web/functions/smeadmin:1311
+msgid "Duration"
+msgstr "Продължителност"
+
+#: root/etc/e-smith/web/functions/smeadmin:1146
+msgid "Client IP address"
+msgstr "IP адрес на клиента"
+
+#: root/etc/e-smith/web/functions/smeadmin:1147
+msgid "Client local IP address"
+msgstr "Локален IP адрес на клиента"
+
+#: root/etc/e-smith/web/functions/smeadmin:1148
+msgid "Incoming data (Ko)"
+msgstr "Входящи данни (KB)"
+
+#: root/etc/e-smith/web/functions/smeadmin:1149
+msgid "Outgoing data (ko)"
+msgstr "Изходящи данни (KB)"
+
+#: root/etc/e-smith/web/functions/smeadmin:1153
+msgid "Detailed list of vpn connections (Virtual Private Network).\n"
+msgstr "Подробен списък на vpn връзките (Virtual Private Network).\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:1161
+msgid "MAC Address"
+msgstr "MAC адрес"
+
+#: root/etc/e-smith/web/functions/smeadmin:1163
+msgid "Date of renewal"
+msgstr "Дата на подновяване"
+
+#: root/etc/e-smith/web/functions/smeadmin:1166
+msgid "List of the last dhcp leases renewal (Dynamic Host Control Protocol).\n"
+msgstr "Списък на последните заявки към dhcp (Dynamic Host Control Protocol) за подновяване.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:1178
+#: root/etc/e-smith/web/functions/smeadmin:1188
+#: root/etc/e-smith/web/functions/smeadmin:1248
+#: root/etc/e-smith/web/functions/smeadmin:1364
+#: root/etc/e-smith/web/functions/smeadmin:1419
+msgid "MySQL error : Impossible to prepare SQL query \"%s\" : %s\n"
+msgstr "Грешка в MySQL: Невъзможно изготвяне на SQL заявка \"%s\" : %s\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:1179
+#: root/etc/e-smith/web/functions/smeadmin:1189
+#: root/etc/e-smith/web/functions/smeadmin:1249
+#: root/etc/e-smith/web/functions/smeadmin:1365
+#: root/etc/e-smith/web/functions/smeadmin:1420
+msgid "MySQL error : Can't execute query : %s\n"
+msgstr "Грешка в MySQL: Не може да се изпълни заявка: %s\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:1204
+msgid "Traffic by Month"
+msgstr "Трафик за месец"
+
+#: root/etc/e-smith/web/functions/smeadmin:1207
+msgid "year-month"
+msgstr "година-месец"
+
+#: root/etc/e-smith/web/functions/smeadmin:1208
+msgid "IN (GB)"
+msgstr "IN (GB)"
+
+#: root/etc/e-smith/web/functions/smeadmin:1209
+msgid "OUT (GB)"
+msgstr "OUT (GB)"
+
+#: root/etc/e-smith/web/functions/smeadmin:1210
+msgid "TOTAL (GB)"
+msgstr "TOTAL (GB)"
+
+#: root/etc/e-smith/web/functions/smeadmin:1278
+msgid "Connection peer"
+msgstr "Партньор на връзката"
+
+#: root/etc/e-smith/web/functions/smeadmin:1279
+msgid "Incoming data (MB)"
+msgstr "Входящи данни (KB)"
+
+#: root/etc/e-smith/web/functions/smeadmin:1280
+msgid "Outgoing data (MB)"
+msgstr "Изходящи данни (KB)"
+
+#: root/etc/e-smith/web/functions/smeadmin:1283
+msgid "Detailed list of ADSL/PPPoE connections.\n"
+msgstr "Подробен списък на ADSL/PPPoE връзките.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:1293
+#: root/etc/e-smith/web/functions/smeadmin:1314
+msgid "Connected ?"
+msgstr "Свързано ли е?"
+
+#: root/etc/e-smith/web/functions/smeadmin:1293
+#: root/etc/e-smith/web/functions/smeadmin:1314
+msgid "No"
+msgstr "Не"
+
+#: root/etc/e-smith/web/functions/smeadmin:1293
+#: root/etc/e-smith/web/functions/smeadmin:1314
+msgid "Yes"
+msgstr "Да"
+
+#: root/etc/e-smith/web/functions/smeadmin:1297
+msgid "Detailed list of ssh connections (Secure SHell).\n"
+msgstr "Подробен списък на ssh връзките (Secure SHell).\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:1322
+msgid "Detailed list of the last connections (on the last 7 days) to the ftp service (File Transfer Protocol).\n"
+msgstr "Подробен списък на последните връзки (през последните 7 дни) към услугата ftp (File Transfer Protocol).\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:1348
+msgid "See the records on "
+msgstr "Вижте записите за "
+
+#: root/etc/e-smith/web/functions/smeadmin:1373
+#: root/etc/e-smith/web/functions/smeadmin:1378
+msgid "Connections which lasted "
+msgstr "Връзките които са показани "
+
+#: root/etc/e-smith/web/functions/smeadmin:1374
+msgid "more than %s hours are highlighted.\n"
+msgstr "повече от %s часа са обозначени.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:1379
+msgid "less than %s hours are highlighted.\n"
+msgstr "по-малко от %s часа са обозначени.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:1380
+msgid "Disconnections which lasted "
+msgstr "Показани са разкачени връзки "
+
+#: root/etc/e-smith/web/functions/smeadmin:1381
+msgid "more than %s minutes are highlighted.\n"
+msgstr "повече от %s минути са обозначени.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:1385
+msgid " root connections are highlighted.\n"
+msgstr " root връзки са обозначени.\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:1385
+msgid "Successful "
+msgstr "Успешно "
+
+#: root/etc/e-smith/web/functions/smeadmin:1426
+msgid "Disconnection lasted more than %s minutes"
+msgstr "Разкачването е продължило повече от %s минути"
+
+#: root/etc/e-smith/web/functions/smeadmin:1485
+msgid "Error at RRDs::graph(%s) : %s\n"
+msgstr "Грешка в RRDs::graph(%s) : %s\n"
+
+#: root/etc/e-smith/web/functions/smeadmin:1507
+msgid "Temperatures"
+msgstr "Температури"
+
+#: root/etc/e-smith/web/functions/smeadmin:1520
+msgid "Hardware temperatures (Processor, motherboard)."
+msgstr "Температури на хардуера (процесор, дъно)."
+
+#: root/etc/e-smith/web/functions/smeadmin:1536
+msgid "Hard-disks Temperatures"
+msgstr "Температури на дисковете"
+
+#: root/etc/e-smith/web/functions/smeadmin:1578
+msgid "Hard disks temperatures."
+msgstr "Температури на дисковете."
+
+#: root/etc/e-smith/web/functions/smeadmin:1586
+#: root/etc/e-smith/web/functions/smeadmin:1591
+#: root/etc/e-smith/web/functions/smeadmin:1592
+msgid "Fan speed"
+msgstr "Скорост на охладителя"
+
+#: root/etc/e-smith/web/functions/smeadmin:1587
+#: root/etc/e-smith/web/functions/smeadmin:1593
+#: root/etc/e-smith/web/functions/smeadmin:1594
+#: root/etc/e-smith/web/functions/smeadmin:1595
+#: root/etc/e-smith/web/functions/smeadmin:1596
+#: root/etc/e-smith/web/functions/smeadmin:1597
+#: root/etc/e-smith/web/functions/smeadmin:1598
+#: root/etc/e-smith/web/functions/smeadmin:1599
+#: root/etc/e-smith/web/functions/smeadmin:1600
+msgid "Rpm"
+msgstr "Rpm"
+
+#: root/etc/e-smith/web/functions/smeadmin:1604
+msgid "Processor fan speed."
+msgstr "Скорост на процесорния охладител."
+
+#: root/etc/e-smith/web/functions/smeadmin:1627
+msgid "Number of opened tcp connections for ssh, ftp, vpn, afp and netbios protocols."
+msgstr "Брой на отворените tcp връзки за протоколите ssh, ftp, vpn, afp и netbios."
+
+#: root/etc/e-smith/web/functions/smeadmin:1628
+msgid "Opened connections"
+msgstr "Отворени връзки"
+
+#: root/etc/e-smith/web/functions/smeadmin:1645
+msgid "Number of dhcp leases renewals and opened samba shares."
+msgstr "Брой на dhcp заявките за подновяване и отворените споделени папки на samba."
+
+#: root/etc/e-smith/web/functions/smeadmin:1646
+msgid "Dhcp & Smbstatus"
+msgstr "Dhcp & Smbstatus"
+
+#: root/etc/e-smith/web/functions/smeadmin:1661
+msgid "Average and maximal ping with the selected target."
+msgstr "Средно и максимално време за ping с посочената цел."
+
+#: root/etc/e-smith/web/functions/smeadmin:1662
+msgid "Target ping latency"
+msgstr "Латентност на ping до целта"
+
+#: root/etc/e-smith/web/functions/smeadmin:1670
+msgid "Avg ping"
+msgstr "Avg ping"
+
+#: root/etc/e-smith/web/functions/smeadmin:1670
+msgid "Max ping"
+msgstr "Max ping"
+
+#: root/etc/e-smith/web/functions/smeadmin:1671
+msgid "Pkt loss"
+msgstr "Pkt loss"
+
+#: root/etc/e-smith/web/functions/smeadmin:1677
+msgid "Load on the local network interface."
+msgstr "Натоварване на локалния интерфейс."
+
+#: root/etc/e-smith/web/functions/smeadmin:1678
+msgid "Local network load"
+msgstr "Натоварване на локалната мрежа"
+
+#: root/etc/e-smith/web/functions/smeadmin:1683
+#: root/etc/e-smith/web/functions/smeadmin:1698
+msgid "Incoming Kilobytes"
+msgstr "Входящи килобайти"
+
+#: root/etc/e-smith/web/functions/smeadmin:1683
+#: root/etc/e-smith/web/functions/smeadmin:1698
+msgid "Outgoing Kilobytes"
+msgstr "Изходящи килобайти"
+
+#: root/etc/e-smith/web/functions/smeadmin:1692
+msgid "Load on the external network interface (to internet)."
+msgstr "Натоварване на външния интерфейс (към интернет)."
+
+#: root/etc/e-smith/web/functions/smeadmin:1693
+msgid "External network load"
+msgstr "Натоварване на външната мрежа"
+
+#: root/etc/e-smith/web/functions/smeadmin:1703
+msgid "Network load on the server except routing."
+msgstr "Мрежово натоварване на сървъра без маршрутизация."
+
+#: root/etc/e-smith/web/functions/smeadmin:1705
+msgid "If the blue curve is :"
+msgstr "Ако синята линия е:"
+
+#: root/etc/e-smith/web/functions/smeadmin:1707
+msgid "positive => download from the internet"
+msgstr "положителна => сваляне от интернет"
+
+#: root/etc/e-smith/web/functions/smeadmin:1708
+msgid "negative => upload from the local network"
+msgstr "отрицателна => качване от локалната мрежа"
+
+#: root/etc/e-smith/web/functions/smeadmin:1710
+msgid "If the red curve is :"
+msgstr "Ако червената линия е:"
+
+#: root/etc/e-smith/web/functions/smeadmin:1712
+msgid "positive => upload from the internet"
+msgstr "положителна => качване от интернет"
+
+#: root/etc/e-smith/web/functions/smeadmin:1713
+msgid "negative => download from the local network"
+msgstr "отрицателна => сваляне от локалната мрежа"
+
+#: root/etc/e-smith/web/functions/smeadmin:1717
+msgid "Network load on the server"
+msgstr "Мрежово натоварване на сървъра"
+
+#: root/etc/e-smith/web/functions/smeadmin:1751
+msgid "Distribution of cpu usage for system, user and niced processes."
+msgstr "Разпределение на използването на процесора от system, user и niced процеси."
+
+#: root/etc/e-smith/web/functions/smeadmin:1752
+msgid "Cpu usage"
+msgstr "Използване на процесора"
+
+#: root/etc/e-smith/web/functions/smeadmin:1765
+msgid "System load average on 1mn,5mn,15mn compared to cpu usage."
+msgstr "Натоварване осреднено на 1 мин, 5 мин, 15 мин спрямо натоварването на процесора."
+
+#: root/etc/e-smith/web/functions/smeadmin:1766
+msgid "System load / Cpu %"
+msgstr "Натоварване / Процесор %"
+
+#: root/etc/e-smith/web/functions/smeadmin:1786
+msgid "Number of running processes on the server, and kernel run queue size."
+msgstr "Брой на работещите процеси на сървъра и размера на опашката за изпълнение от ядрото."
+
+#: root/etc/e-smith/web/functions/smeadmin:1787
+msgid "Number of processes / run queue size"
+msgstr "Брой процеси / размер на опашката"
+
+#: root/etc/e-smith/web/functions/smeadmin:1793
+msgid "Processes"
+msgstr "Процеси"
+
+#: root/etc/e-smith/web/functions/smeadmin:1793
+msgid "Run queue"
+msgstr "Опашка за изпълнение"
+
+#: root/etc/e-smith/web/functions/smeadmin:1800
+msgid "Server uptime."
+msgstr "Време за работа на сървъра."
+
+#: root/etc/e-smith/web/functions/smeadmin:1801
+#: root/etc/e-smith/web/functions/smeadmin:1806
+msgid "Uptime"
+msgstr "Време за работа"
+
+#: root/etc/e-smith/web/functions/smeadmin:1802
+msgid "Days"
+msgstr "Дни"
+
+#: root/etc/e-smith/web/functions/smeadmin:1812
+msgid "Detailed usage of the server memory."
+msgstr "Подробности за използването на системната памет."
+
+#: root/etc/e-smith/web/functions/smeadmin:1813
+msgid "Memory usage"
+msgstr "Използваемост на паметта "
+
+#: root/etc/e-smith/web/functions/smeadmin:1814
+#: root/etc/e-smith/web/functions/smeadmin:1835
+#: root/etc/e-smith/web/functions/smeadmin:1867
+msgid "Bytes"
+msgstr "Байтове"
+
+#: root/etc/e-smith/web/functions/smeadmin:1821
+msgid "Buffers"
+msgstr "Буфери"
+
+#: root/etc/e-smith/web/functions/smeadmin:1821
+msgid "Cached"
+msgstr "Кеширани"
+
+#: root/etc/e-smith/web/functions/smeadmin:1821
+#: root/etc/e-smith/web/functions/smeadmin:1840
+#: root/etc/e-smith/web/functions/smeadmin:1877
+msgid "Used"
+msgstr "Използвани"
+
+#: root/etc/e-smith/web/functions/smeadmin:1822
+#: root/etc/e-smith/web/functions/smeadmin:1840
+#: root/etc/e-smith/web/functions/smeadmin:1877
+msgid "Free"
+msgstr "Свободни"
+
+#: root/etc/e-smith/web/functions/smeadmin:1822
+#: root/etc/e-smith/web/functions/smeadmin:1840
+#: root/etc/e-smith/web/functions/smeadmin:1995
+msgid "Total"
+msgstr "Всичко"
+
+#: root/etc/e-smith/web/functions/smeadmin:1833
+msgid "Swap usage (virtual memory) on the server's hard disk."
+msgstr "Използваемост на Swap (виртуална памет) на диска на сървъра."
+
+#: root/etc/e-smith/web/functions/smeadmin:1834
+msgid "Swap usage"
+msgstr "Използваемост на Swap"
+
+#: root/etc/e-smith/web/functions/smeadmin:1849
+msgid "Amount of raw data read/written on the hard disk."
+msgstr "Обем чисти данни четени/записани на диска."
+
+#: root/etc/e-smith/web/functions/smeadmin:1850
+msgid "Data written/read"
+msgstr ""
+
+#: root/etc/e-smith/web/functions/smeadmin:1851
+msgid "Blocks/s"
+msgstr "Блокове/сек"
+
+#: root/etc/e-smith/web/functions/smeadmin:1856
+msgid "Read"
+msgstr "Четени"
+
+#: root/etc/e-smith/web/functions/smeadmin:1856
+msgid "Written"
+msgstr "Записани"
+
+#: root/etc/e-smith/web/functions/smeadmin:1866
+msgid "Hard disk usage"
+msgstr "Използваемост на диска"
+
+#: root/etc/e-smith/web/functions/smeadmin:1890
+msgid "Detailed usage of disk space (squid cache, mysql databases, log files, user files..)."
+msgstr "Детайлно използване на мястото на диска (squid cache, mysql databases, log files, user files ...)."
+
+#: root/etc/e-smith/web/functions/smeadmin:1891
+msgid "Disk space usage."
+msgstr "Използване на мястото на диска."
+
+#: root/etc/e-smith/web/functions/smeadmin:1900
+msgid "Number of local/remote e-mails handled by the internal mail service (including other service generated e-mails)."
+msgstr "Брой на локални/външни ел. съобщения, обработени от вътрешната услуга за ел. поща (включващо и съобщенията от другите услуги)."
+
+#: root/etc/e-smith/web/functions/smeadmin:1901
+msgid "Local/Remote e-mails"
+msgstr "Локални/външни съобщения"
+
+#: root/etc/e-smith/web/functions/smeadmin:1916
+#: root/etc/e-smith/web/functions/smeadmin:1949
+msgid "Total local e-mails"
+msgstr "Общо локални съобщения"
+
+#: root/etc/e-smith/web/functions/smeadmin:1917
+#: root/etc/e-smith/web/functions/smeadmin:1950
+msgid "Total remote e-mails"
+msgstr "Общо външни съобщения"
+
+#: root/etc/e-smith/web/functions/smeadmin:1919
+#: root/etc/e-smith/web/functions/smeadmin:1952
+msgid "Remote e-mail success"
+msgstr "Успешни външни съобщения"
+
+#: root/etc/e-smith/web/functions/smeadmin:1920
+#: root/etc/e-smith/web/functions/smeadmin:1953
+msgid "Remote e-mail deferral"
+msgstr "Отложени външни съобщения"
+
+#: root/etc/e-smith/web/functions/smeadmin:1921
+#: root/etc/e-smith/web/functions/smeadmin:1954
+msgid "Remote e-mail failure"
+msgstr "Неуспешни външни съобщения"
+
+#: root/etc/e-smith/web/functions/smeadmin:1923
+#: root/etc/e-smith/web/functions/smeadmin:1956
+msgid "Local queue"
+msgstr "Локална опашка"
+
+#: root/etc/e-smith/web/functions/smeadmin:1924
+#: root/etc/e-smith/web/functions/smeadmin:1957
+msgid "Remote queue"
+msgstr "Външна опашка"
+
+#: root/etc/e-smith/web/functions/smeadmin:1933
+msgid "Number of remote e-mails handled by the alternative mail service (altqmail)."
+msgstr "Брой на външните съобщения обработени от алтернативни пощенски услуги (altqmail)."
+
+#: root/etc/e-smith/web/functions/smeadmin:1934
+msgid "Remote e-mails (altqmail)"
+msgstr "Външни съобщения (altqmail)"
+
+#: root/etc/e-smith/web/functions/smeadmin:1967
+msgid "Number of incoming  e-mail connections to qpsmtpd services (outside of server incoming e-mails) and amount of spam/viruses filtered."
+msgstr "Брой на входящите връзки за съобщения към услугата qpsmtpd (входящи съобщения извън сървъра) и количество филтрирани спам/вируси."
+
+#: root/etc/e-smith/web/functions/smeadmin:1968
+msgid "Incoming qpsmtpd connections spam/virus/e-mails"
+msgstr "Входящи връзки към qpsmtpd и съобщения със spam/virus"
+
+#: root/etc/e-smith/web/functions/smeadmin:1996
+msgid "Total accepted e-mails"
+msgstr "Общо потвърдени съобщения"
+
+#: root/etc/e-smith/web/functions/smeadmin:1997
+#: root/etc/e-smith/web/functions/smeadmin:1998
+msgid "Accepted e-mails"
+msgstr "Потвърдени съобщения"
+
+#: root/etc/e-smith/web/functions/smeadmin:1997
+msgid "spam queued"
+msgstr "спам в опашка"
+
+#: root/etc/e-smith/web/functions/smeadmin:1998
+msgid "queued"
+msgstr "в опашка"
+
+#: root/etc/e-smith/web/functions/smeadmin:2000
+msgid "Total denied e-mails"
+msgstr "Общи отхвърлени съобщения"
+
+#: root/etc/e-smith/web/functions/smeadmin:2001
+#: root/etc/e-smith/web/functions/smeadmin:2002
+#: root/etc/e-smith/web/functions/smeadmin:2003
+#: root/etc/e-smith/web/functions/smeadmin:2004
+#: root/etc/e-smith/web/functions/smeadmin:2005
+#: root/etc/e-smith/web/functions/smeadmin:2006
+#: root/etc/e-smith/web/functions/smeadmin:2007
+#: root/etc/e-smith/web/functions/smeadmin:2008
+#: root/etc/e-smith/web/functions/smeadmin:2009
+#: root/etc/e-smith/web/functions/smeadmin:2010
+#: root/etc/e-smith/web/functions/smeadmin:2011
+#: root/etc/e-smith/web/functions/smeadmin:2012
+#: root/etc/e-smith/web/functions/smeadmin:2013
+#: root/etc/e-smith/web/functions/smeadmin:2014
+#: root/etc/e-smith/web/functions/smeadmin:2015
+#: root/etc/e-smith/web/functions/smeadmin:2016
+#: root/etc/e-smith/web/functions/smeadmin:2017
+msgid "Denied e-mails"
+msgstr "Отхвърлени съобщения"
+
+#: root/etc/e-smith/web/functions/smeadmin:2001
+msgid "check_spamhelo"
+msgstr "check_spamhelo"
+
+#: root/etc/e-smith/web/functions/smeadmin:2002
+msgid "other reasons"
+msgstr "други причини"
+
+#: root/etc/e-smith/web/functions/smeadmin:2003
+msgid "tls failed"
+msgstr "tls failed"
+
+#: root/etc/e-smith/web/functions/smeadmin:2004
+msgid "auth failed"
+msgstr "tls failed"
+
+#: root/etc/e-smith/web/functions/smeadmin:2005
+msgid "spf"
+msgstr "spf"
+
+#: root/etc/e-smith/web/functions/smeadmin:2006
+msgid "resolvable_fromhost"
+msgstr "resolvable_fromhost"
+
+#: root/etc/e-smith/web/functions/smeadmin:2007
+msgid "karma"
+msgstr "karma"
+
+#: root/etc/e-smith/web/functions/smeadmin:2008
+msgid "check_basicheaders"
+msgstr "check_basicheaders"
+
+#: root/etc/e-smith/web/functions/smeadmin:2009
+msgid "check_goodrcptto"
+msgstr "check_goodrcptto"
+
+#: root/etc/e-smith/web/functions/smeadmin:2010
+msgid "uribl"
+msgstr "uribl"
+
+#: root/etc/e-smith/web/functions/smeadmin:2011
+msgid "rhsbl"
+msgstr "rhsbl"
+
+#: root/etc/e-smith/web/functions/smeadmin:2012
+msgid "dnsbl"
+msgstr "dnsbl"
+
+#: root/etc/e-smith/web/functions/smeadmin:2013
+msgid "check_earlytalker"
+msgstr "check_earlytalker"
+
+#: root/etc/e-smith/web/functions/smeadmin:2014
+msgid "fcrdns"
+msgstr "fcrdns"
+
+#: root/etc/e-smith/web/functions/smeadmin:2015
+msgid "dmarc"
+msgstr "dmarc"
+
+#: root/etc/e-smith/web/functions/smeadmin:2016
+msgid "spam denied"
+msgstr "отказан спам"
+
+#: root/etc/e-smith/web/functions/smeadmin:2017
+msgid "virus"
+msgstr "вирус"
+
+#: root/usr/bin/smeadmind:1467
+msgid "Error at RRDs::update"
+msgstr "Грешка в RRDs::update"
+
+#: root/usr/bin/smeadmind:1480
+msgid "Server status\n"
+msgstr "Състояние на сървъра\n"
+
+#: root/usr/bin/smeadmind:1481
+msgid "Number of opened connections : "
+msgstr "Брой на отворените връзки: "
+
+#: root/usr/bin/smeadmind:1509
+msgid "During the last 5 minutes, %s incoming e-mails were detected, "
+msgstr "През последните 5 мин бяха открити %s входящи съобщения "
+
+#: root/usr/bin/smeadmind:1510
+msgid "you had set the alert limit to %s incoming e-mails.\n"
+msgstr "вие зададохте лимит за аларма на %s входящи съобщения.\n"
+
+#: root/usr/bin/smeadmind:1511
+msgid "(Possible reasons : do you receive spam ? a mailbomb ? mailing-lists ?)\n"
+msgstr "(Възможни причини: получихте ли спам ? а пощенска бомба ? пощенски списък ?)\n"
+
+#: root/usr/bin/smeadmind:1512
+#: root/usr/bin/smeadmind:1524
+#: root/usr/bin/smeadmind:1536
+#: root/usr/bin/smeadmind:1548
+#: root/usr/bin/smeadmind:1560
+#: root/usr/bin/smeadmind:1570
+#: root/usr/bin/smeadmind:1580
+#: root/usr/bin/smeadmind:1590
+#: root/usr/bin/smeadmind:1600
+#: root/usr/bin/smeadmind:1610
+#: root/usr/bin/smeadmind:1620
+#: root/usr/bin/smeadmind:1630
+#: root/usr/bin/smeadmind:1640
+#: root/usr/bin/smeadmind:1650
+#: root/usr/bin/smeadmind:1664
+#: root/usr/bin/smeadmind:1676
+msgid "If you have access to the server-manager, use this link to modify the limit :\n"
+msgstr "Ако имате достъп до server-manager, използвайте връзката за да промените лимита:\n"
+
+#: root/usr/bin/smeadmind:1521
+msgid "During the last 5 minutes, %s outgoing e-mails were detected, "
+msgstr "През последните 5 мин бяха открити %s изходящи съобщения, "
+
+#: root/usr/bin/smeadmind:1522
+msgid "you had set the alert limit to %s outgoing e-mails.\n"
+msgstr "вие зададохте лимит за аларма на %s изходящи съобщения.\n"
+
+#: root/usr/bin/smeadmind:1523
+msgid "(Possible reasons : do you send spam ? administrate a mailing-list ?)\n"
+msgstr "(Възможни причини: пращахте ли спам ? използвахте ли административни пощенски списъци ?)\n"
+
+#: root/usr/bin/smeadmind:1533
+msgid "Your hard disk is %s %% full, "
+msgstr "Дискът пълен %s %%, "
+
+#: root/usr/bin/smeadmind:1534
+#: root/usr/bin/smeadmind:1546
+msgid "you had set the alert limit to %s %%.\n"
+msgstr "вие зададохте лимит за аларма на %s %%.\n"
+
+#: root/usr/bin/smeadmind:1535
+msgid "(Advice : free space by deleting temp files, or upgrade your disk space)\n"
+msgstr "(Съвет: освободете място като изтриете временните файлове или увеличете размера на диска)\n"
+
+#: root/usr/bin/smeadmind:1545
+msgid "Your processor is %s %% loaded, "
+msgstr "Процесорът е натоварен %s %% "
+
+#: root/usr/bin/smeadmind:1547
+msgid "(Possible reasons : Is there a crashed process ? an intense and prolonged activity on the server ?)\n"
+msgstr "(Възможна причина: Има ли гръмнал процес ? интензивна и продължителна активност на сървъра ?)\n"
+
+#: root/usr/bin/smeadmind:1557
+#: root/usr/bin/smeadmind:1567
+msgid "The temperature reported by sensor %s is %s degrees C, "
+msgstr "Температурата отчетена от сензора %s е %s градуса C, "
+
+#: root/usr/bin/smeadmind:1558
+#: root/usr/bin/smeadmind:1568
+#: root/usr/bin/smeadmind:1578
+#: root/usr/bin/smeadmind:1588
+#: root/usr/bin/smeadmind:1598
+#: root/usr/bin/smeadmind:1608
+#: root/usr/bin/smeadmind:1618
+#: root/usr/bin/smeadmind:1628
+msgid "you had set the alert limit to %s degrees C.\n"
+msgstr "вие зададохте лимит за аларма на %s градуса C.\n"
+
+#: root/usr/bin/smeadmind:1559
+#: root/usr/bin/smeadmind:1569
+msgid "(Advice : check the fans, and if the room is well ventilated or under AC.)\n"
+msgstr "(Съвет: проверете охладителите и дали стаята е добре вентилирана или е на пряка слънчева светлина.)\n"
+
+#: root/usr/bin/smeadmind:1577
+#: root/usr/bin/smeadmind:1587
+#: root/usr/bin/smeadmind:1597
+#: root/usr/bin/smeadmind:1607
+#: root/usr/bin/smeadmind:1617
+#: root/usr/bin/smeadmind:1627
+msgid "The temperature of %s hard disk is %s degrees C, "
+msgstr "Температурата на диск %s е %s градуса C, "
+
+#: root/usr/bin/smeadmind:1579
+#: root/usr/bin/smeadmind:1589
+#: root/usr/bin/smeadmind:1599
+#: root/usr/bin/smeadmind:1609
+#: root/usr/bin/smeadmind:1619
+#: root/usr/bin/smeadmind:1629
+msgid "(Advice : check if the server case and the hard disks are well cooled.)\n"
+msgstr "(Съвет: проверете дали кутията на сървъра и самия диска за добре охлаждани.)\n"
+
+#: root/usr/bin/smeadmind:1637
+msgid "There are %s opened connections to the SAMBA service, "
+msgstr "Има %s отворени връзки към услугата SAMBA, "
+
+#: root/usr/bin/smeadmind:1638
+msgid "you had set the alert limit to %s connections.\n"
+msgstr "вие зададохте лимит за аларма на %s връзки.\n"
+
+#: root/usr/bin/smeadmind:1639
+msgid "(Advice : if you encounter problems accessing local neighboorhood, kill some connections.)\n"
+msgstr "(Съвет: ако имате проблеми с достъпа до локалната общност, прекъснете някои връзки.)\n"
+
+#: root/usr/bin/smeadmind:1647
+msgid "There are %s opened SSH sessions on the server, "
+msgstr "Има %s отворени сесии към SSH сървъра, "
+
+#: root/usr/bin/smeadmind:1648
+#: root/usr/bin/smeadmind:1662
+#: root/usr/bin/smeadmind:1674
+msgid "you had set the alert limit to %s sessions.\n"
+msgstr "вие зададохте лимит за аларма на %s сесии.\n"
+
+#: root/usr/bin/smeadmind:1649
+msgid "(Advice : check if it is known administrative connections, and not hackers.)\n"
+msgstr "(Съвет: проверете дали това са известни административни връзки, а не хакерски.)\n"
+
+#: root/usr/bin/smeadmind:1661
+msgid "There are %s opened FTP sessions on the server, "
+msgstr "Има %s отворени FTP сесии на сървъра, "
+
+#: root/usr/bin/smeadmind:1663
+#: root/usr/bin/smeadmind:1675
+msgid "(Advice : check that it is authorized users only.)\n"
+msgstr "(Съвет: проверете дали това са само оторизирани потребители.)\n"
+
+#: root/usr/bin/smeadmind:1673
+msgid "There are %s opened VPN sessions on the server, "
+msgstr "Има %s отворени VPN сесии на сървъра, "
+
+#~ msgid "Donnees ecrites/lues"
+#~ msgstr "Четени/записани данни"

@@ -1,0 +1,139 @@
+{
+	use MIME::Base64 qw(encode_base64);
+
+	my $smeadmindb = $DB->get('smeadmind') || $DB->new_record("smeadmind",{type=>'service'});
+
+	$pw = "not set due to error";
+
+	if ( open( RANDOM, "/dev/urandom" ) ){
+		my $buf;
+          	if ( read( RANDOM, $buf, 25 ) != 25 ){
+              		warn("Short read from /dev/random: $!");
+          	}
+          	else{
+              		$pw = encode_base64($buf);
+              		chomp $pw;
+          	}
+          	close RANDOM;
+        }
+      	else{
+          	warn "Could not open /dev/urandom: $!";
+        }
+
+	# let's migrate sme9admind values to smeadmind
+	if ( defined $sme9admind && ! defined $smeadmind ) {
+	   for my $propertie (keys %sme9admind) {
+		next if $propertie eq "DbName" || $propertie eq "DbUser";
+		$smeadmindb->set_prop($propertie, $sme9admind{$propertie});
+	   }
+
+	}
+
+	$smeadmindb->set_prop('DbPassword', $pw) if not $smeadmindb->prop('DbPassword');
+
+	if ( -e "/etc/e-smith/web/panels/manager/html/smeadmin/_smeadmin.conf" ){
+		open(CONF,"</etc/e-smith/web/panels/manager/html/smeadmin/_smeadmin.conf");
+		my @confs = <CONF>;
+		close(CONF);
+		foreach (@confs){
+    			foreach my $key (qw(
+				db_database
+				db_password
+				db_username
+				img_format
+				img_width
+				img_height
+				other_mail_address_domains
+				ping_target
+				hddtemp_first_hd
+				hddtemp_second_hd
+				du_enabled
+				sensors_first_temp_tag
+				sensors_second_temp_tag
+				sensors_fan_tag
+				limit_pppoe_disconnection
+				limit_pppoe_duration
+				limit_vpn_duration
+				mail_alert_recipient
+				mail_status_recipient
+				mail_status_delay_between
+				max_mail_in
+				max_mail_out
+				max_hd_used
+				max_cpu_total
+				max_temp_hard
+				max_temp_hd
+				max_sessions_samba
+				max_sessions_ssh
+				max_sessions_ftp
+				max_sessions_vpn
+				)){
+	            		# valeur = partie droite de la ligne contenant $key dans le fichier
+          			if ($_ =~ /\s*$key\s*=\s*(.*)/){
+         				$params{$key} = $1;
+           			}
+       			}
+		}
+		# Si la valeur dans la db est diférente de la valeur trouve dans le fichier, alors on met a jour la db
+		$smeadmindb->set_prop('DbName',$params{'db_database'}); 
+#			if ($smeadmindb->prop('DbName') ne $params{'db_database'});
+		$smeadmindb->set_prop('DbPassword',$params{'db_password'});
+#                       if ($smeadmindb->prop('DbPassword') ne $params{'db_password'});
+		$smeadmindb->set_prop('DbUser',$params{'db_username'});
+#			if ($smeadmindb->prop('DbUser') ne $params{'db_username'});
+		$smeadmindb->set_prop('ImgFormat',$params{'img_format'}); 
+#			if ($smeadmindb->prop('ImgFormat') ne $params{'img_format'});
+		$smeadmindb->set_prop('ImgWidth',$params{'img_width'});
+#			if ($smeadmindb->prop('ImgWidth') ne $params{'img_width'});
+		$smeadmindb->set_prop('ImgHeight',$params{'img_height'}); 
+#			if ($smeadmindb->prop('ImgHeight') ne $params{'img_height'});
+		$smeadmindb->set_prop('OtherMailDomains',$params{'other_mail_address_domains'});
+#			if ($smeadmindb->prop('OtherMailDomains') ne $params{'other_mail_address_domains'});
+		$smeadmindb->set_prop('PingTarget',$params{'ping_target'});
+#			if ($smeadmindb->prop('PingTarget') ne $params{'ping_target'});
+		$smeadmindb->set_prop('hd1',$params{'hddtemp_first_hd'});
+#			if ($smeadmindb->prop('hd1') ne $params{'hddtemp_first_hd'});
+		$smeadmindb->set_prop('hd2',$params{'hddtemp_second_hd'});
+#			if ($smeadmindb->prop('hd2') ne $params{'hddtemp_second_hd'});
+		$smeadmindb->set_prop('UseDu',$params{'du_enabled'});
+#			if ($smeadmindb->prop('UseDu') ne $params{'du_enabled'});
+		$smeadmindb->set_prop('SensorsTag1',$params{'sensors_first_temp_tag'});
+#			if ($smeadmindb->prop('SensorsTag1') ne $params{'sensors_first_temp_tag'});
+		$smeadmindb->set_prop('SensorsTag2',$params{'sensors_second_temp_tag'});
+#			if ($smeadmindb->prop('SensorsTag2') ne $params{'sensors_second_temp_tag'});
+		$smeadmindb->set_prop('SensorsTagFan',$params{'sensors_fan_tag'});
+#			if ($smeadmindb->prop('SensorsTagFan') ne $params{'sensors_fan_tag'});
+		$smeadmindb->set_prop('LimitPppoeDisconnect',$params{'limit_pppoe_disconnection'});
+#			if ($smeadmindb->prop('LimitPppoeDisconnect') ne $params{'limit_pppoe_disconnection'});
+		$smeadmindb->set_prop('LimitPppoeDuration',$params{'limit_pppoe_duration'});
+#			if ($smeadmindb->prop('LimitPppoeDuration') ne $params{'limit_pppoe_duration'});
+		$smeadmindb->set_prop('LimitVpnDuration',$params{'limit_vpn_duration'});
+#			if ($smeadmindb->prop('LimitVpnDuration') ne $params{'limit_vpn_duration'});
+		$smeadmindb->set_prop('AlertMailRecipient',$params{'mail_alert_recipient'});
+#			if ($smeadmindb->prop('AlertMailRecipient') ne $params{'mail_alert_recipient'});
+		$smeadmindb->set_prop('StatusMailRecipient',$params{'mail_status_recipient'});
+#			if ($smeadmindb->prop('StatusMailRecipient') ne $params{'mail_status_recipient'});
+		$smeadmindb->set_prop('StatusInterval',$params{'mail_status_delay_between'});
+#			if ($smeadmindb->prop('StatusInterval') ne $params{'mail_status_delay_between'});
+		$smeadmindb->set_prop('MaxMailIn',$params{'max_mail_in'});
+#			if ($smeadmindb->prop('MaxMailIn') ne $params{'max_mail_in'});
+		$smeadmindb->set_prop('MaxMailOut',$params{'max_mail_out'});
+#			if ($smeadmindb->prop('MaxMailOut') ne $params{'max_mail_out'});
+		$smeadmindb->set_prop('MaxDiskSpace',$params{'max_hd_used'});
+#			if ($smeadmindb->prop('MaxDiskSpace') ne $params{'max_hd_used'});
+		$smeadmindb->set_prop('MaxCpu',$params{'max_cpu_total'});
+#			if ($smeadmindb->prop('MaxCpu') ne $params{'max_cpu_total'});
+		$smeadmindb->set_prop('MaxHwTemp',$params{'max_temp_hard'});
+#			if ($smeadmindb->prop('MaxHwTemp') ne $params{'max_temp_hard'});
+		$smeadmindb->set_prop('MaxSamba',$params{'max_sessions_samba'});
+#			if ($smeadmindb->prop('MaxSamba') ne $params{'max_sessions_samba'});
+		$smeadmindb->set_prop('MaxSsh',$params{'max_sessions_ssh'});
+#			if ($smeadmindb->prop('MaxSsh') ne $params{'max_sessions_ssh'});
+		$smeadmindb->set_prop('MaxFtp',$params{'max_sessions_ftp'});
+#			if ($smeadmindb->prop('MaxFtp') ne $params{'max_sessions_ftp'});
+		$smeadmindb->set_prop('MaxVpn',$params{'max_sessions_vpn'});
+#			if ($smeadmindb->prop('MaxVpn') ne $params{'max_sessions_vpn'});
+		system("/bin/mv /etc/e-smith/web/panels/manager/html/smeadmin/_smeadmin.conf /etc/e-smith/web/panels/manager/html/smeadmin/smeadmin.conf.old");
+	}
+}
+
