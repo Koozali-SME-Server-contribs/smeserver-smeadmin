@@ -385,7 +385,7 @@ sub accueil
 			$q->start_table({-border => '1'});
 			$q->Tr($q->th(gettext("Service")),$q->th(gettext("State")),$q->th(gettext("Nb process")),$q->th(gettext("Action")));
 
-	print $q->startform(-method => 'GET', -action => $q->url (-absolute => 1));
+	print $q->start_form(-method => 'GET', -action => $q->url (-absolute => 1));
 
 		  
 	foreach my $svc (@services)
@@ -456,7 +456,7 @@ sub accueil
     #service_control est le parametre qui prend le nom du service a arreter/demarrer
 	print $q->hidden(-name=>'state',-default=>'service_control',-override=>1),
 		$q->end_table,
-		$q->endform;
+		$q->end_form;
     
         
     #hack pour la mise en forme : b) fin 1er case a gauche et debut 2e case
@@ -551,7 +551,7 @@ sub readConf
 sub showConf 
 {
 	
-	print $q->startform (-method => 'GET', -action => $q->url (-absolute => 1 )),
+	print $q->start_form (-method => 'GET', -action => $q->url (-absolute => 1 )),
 		$q->i($q->p(gettext("Configuration of status e-mails.\n"))),
 		$q->p(gettext("If you set the frequency to 0, status e-mails are disabled. You can put only the username if the recipient is a local user.\n")),
 		$q->start_table,
@@ -631,7 +631,7 @@ sub showConf
 		$q->hr({width=>'50%'}),
 		esmith::cgi::genButtonRow($q,$q->submit(-name=>'action',-value=>gettext("Save"))),
 		$q->hidden(-name=>'state',-default=>'validate',-override=>1),
-		$q->endform;
+		$q->end_form;
 }
 
 #----------------------------------------------------------------
@@ -640,7 +640,7 @@ sub showConf
 sub showAlertConf
 {
     my $key=$q->param('alert');
-	print $q->startform (-method => 'GET', -action => $q->url (-absolute => 1 )),
+	print $q->start_form (-method => 'GET', -action => $q->url (-absolute => 1 )),
         $q->i($q->p(gettext("Alert configuration.\n"))),$q->p(gettext("Put 0 to desactivate it.\n")),$q->br,
    	    $q->start_table,
 		esmith::cgi::genNameValueRow($q,$strings{$key},$key,$params{$key}),
@@ -648,7 +648,7 @@ sub showAlertConf
 		esmith::cgi::genButtonRow($q,$q->submit(-name=>'action',-value=>gettext("Save"))),
 		$q->hidden(-name=>'state',-default=>'validate',-override=>1),
 		$q->hidden(-name=>'alert',-default=>"$key",-override=>1),
-		$q->endform;
+		$q->end_form;
 }
 #----------------------------------------------------------------
 #verifie et sauve les nouveaux parametres
