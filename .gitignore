@@ -1,4 +1,4 @@
 *.rpm
 *.log
 *spec-20*
-*.tar.gz
+*.tar.xz
