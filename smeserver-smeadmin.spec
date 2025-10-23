@@ -7,7 +7,7 @@ Summary: A graphical monitor, alert raising, and services supervision tool for y
 %define name smeserver-smeadmin
 Name: %{name}
 %define version 1.6
-%define release 17
+%define release 18
 Version: %{version}
 Release: %{release}%{?dist}
 License: GPL
@@ -81,6 +81,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 
 %changelog
+* Thu Oct 23 2025 Vasarhelyi Zsolt <zsoltv@koozali.org> 1.6-18.sme
+- Fix database creation script [SME: 12961]
+
 * Wed Oct 08 2025 Brian Read <brianr@koozali.org> 1.6-17.sme
 - Apply change from startform to start_form and endform to end_form to CGI panels [SME: 12787]
 - fix .gitignore and delete tarball from git repo [SME: 12787]
