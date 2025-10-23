@@ -7,7 +7,7 @@ Summary: A graphical monitor, alert raising, and services supervision tool for y
 %define name smeserver-smeadmin
 Name: %{name}
 %define version 1.6
-%define release 18
+%define release 19
 Version: %{version}
 Release: %{release}%{?dist}
 License: GPL
@@ -27,6 +27,7 @@ Requires: rrdtool
 Requires: hddtemp
 Requires: sysstat
 Requires: lm_sensors
+Requires: perl-DBD-mysql
 #Obsoletes: smeserver-sme8admin
 
 AutoReqProv: no
@@ -81,6 +82,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 
 %changelog
+* Thu Oct 23 2025 Vasarhelyi Zsolt <zsoltv@koozali.org> 1.6-19.sme
+- Add requires perl-DBD-mysql [SME: 12961]
+
 * Thu Oct 23 2025 Vasarhelyi Zsolt <zsoltv@koozali.org> 1.6-18.sme
 - Fix database creation script [SME: 12961]
 
