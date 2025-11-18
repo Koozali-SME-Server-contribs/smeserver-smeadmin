@@ -7,7 +7,7 @@ Summary: A graphical monitor, alert raising, and services supervision tool for y
 %define name smeserver-smeadmin
 Name: %{name}
 %define version 1.6
-%define release 19
+%define release 20
 Version: %{version}
 Release: %{release}%{?dist}
 License: GPL
@@ -82,6 +82,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 
 %changelog
+* Tue Nov 18 2025 Vasarhelyi Zsolt <zsoltv@koozali.org> 1.6-20.sme
+- Rewrite for postfix, adjust for qpsmtpd logs [SME: 13306]
+
 * Thu Oct 23 2025 Vasarhelyi Zsolt <zsoltv@koozali.org> 1.6-19.sme
 - Add requires perl-DBD-mysql [SME: 12961]
 

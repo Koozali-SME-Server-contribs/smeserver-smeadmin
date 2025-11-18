@@ -96,10 +96,10 @@ my @logs= ( "clamd/current",   		# VIRUS ???
             "sshd/sshd.log",     	# ssh connections
             "messages",			# afpd pppd and others not with dedicated logs
 	    "dhcpd/dhcpd.log", 		# dhcpd
-	    "qmail/current",    	# mails IN/OUT
-	    "altqmail/current",    	# mails OUT
-            "qpsmtpd/current",  	# SPAM/VIRUS ??
-            "sqpsmtpd/current", 	# SPAM/VIRUS ??
+	    "maillog",    		# mails IN/OUT
+            "qpsmtpd/qpsmtpd.log",  	# SPAM/VIRUS ??
+            "sqpsmtpd/sqpsmtpd.log", 	# SPAM/VIRUS ??
+            "uqpsmtpd/uqpsmtpd.log", 	# SPAM/VIRUS ??
             "proftpd/proftpd.log",  	# start and end of ftp session
             "secure",           	# FTP session with usernam auth
             "xferlog");         	# file transfer with ftp
@@ -173,25 +173,15 @@ my %cnt;
 foreach (keys %denied, @others){
     $cnt{$_} = 0;
 }
-# pour qmail
+# pour postfix
 my ($localqueue,$remotequeue);
-my @resultsqm = qw(failure deferral success total);
+my @resultsqm = qw(bounced deferred sent total);
 my %cntqm;
 my %cntqmlocal;
 foreach (@resultsqm){
     $cntqm{$_} = 0;
     $cntqmlocal{$_} = 0;
 }
-# pour altqmail
-my ($localaqueue,$remoteaqueue);
-my @resultsaqm = qw(failure deferral success total);
-my %cntaqm;
-my %cntaqmlocal;
-foreach (@resultsaqm){
-    $cntaqm{$_} = 0;
-    $cntaqmlocal{$_} = 0;
-}
-my $net_amail_out=0;
 
 #------------------------
 #declaration de fonctions
@@ -540,17 +530,13 @@ sub parse_logs {
 
 
     # reset all counter before checking logs
-    ($net_dhcp,$net_mail_in,$net_mail_out,$net_amail_out,$net_spam,$net_virus)=(0,0,0,0,0,0);
+    ($net_dhcp,$net_mail_in,$net_mail_out,$net_spam,$net_virus)=(0,0,0,0,0);
     foreach (keys %denied, @others){
         $cnt{$_} = 0;
     }
     foreach (@resultsqm){
     	$cntqm{$_} = 0;
 	$cntqmlocal{$_} = 0;
-    }
-    foreach (@resultsaqm){
-        $cntaqm{$_} = 0;
-        $cntaqmlocal{$_} = 0;
     }
     foreach my $nom (@logs) {
         # on recupere un file handle positionné comme il faut
@@ -704,17 +690,16 @@ sub parse_logs {
                 if($l =~ /identified spam/) {$net_spam++;next;}
             }
         }
-        elsif ($nom =~ /^qmail\/current$/) {
+        elsif ($nom eq "maillog") {
             while ( defined(my $l = <$fh>)) {
     		# accounting for remote connections
-         	#    @400000004994ad092afa867c delivery 96906: success etc...
-             	if ($l =~ m/^\@[0-9a-f]{24} delivery \d+: (success|failure|deferral).*(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|CNAME_lookup_failed_temporarily|Sorry,_I_wasn't_able_to_establish_an_SMTP_connection)/i) {
+    		if ($l =~ m/(?=postfix\/smtp)(?=.* status=(sent|bounced|deferred) \()/i) {
                	    my $result = $1;
                     $cntqm{$result}++;
 		    next;
 		}
-		# accounting for local connections have to be after the remote
-		if ($l =~ m/^\@[0-9a-f]{24} delivery \d+: (success|failure|deferral).*/i) {
+		# accounting for local connections
+    		if ($l =~ m/(?=postfix\/local)(?=.* status=(sent|bounced|deferred) \()/i) {
                     my $result = $1;
                     $cntqmlocal{$result}++;
                     next;
@@ -728,57 +713,23 @@ sub parse_logs {
      		$cntqm{total} = $cntqm{total} + $cntqm{$_} if $_ !~ /total/;
                 $cntqmlocal{total} = $cntqmlocal{total} + $cntqmlocal{$_} if $_ !~ /total/;
      	    }
-	    ## add qmail local queue
-	    $localqueue=`find /var/qmail/queue/local/ -type f | wc -l`;
+	    ## add postfix active queue
+	    $localqueue=`find /var/spool/postfix/active/ -type f | wc -l`;
 	    $localqueue=~ s/\D+//g;
-	    ### add qmail remote queue
-	    $remotequeue=`find /var/qmail/queue/remote/ -type f | wc -l`;
+	    ### add postfix deferred queue
+	    $remotequeue=`find /var/spool/postfix/deferred/ -type f | wc -l`;
 	    $remotequeue=~ s/\D+//g;
 	    $net_mail_out=$cntqm{total};	
 
         }
-        elsif ($nom =~ /^altqmail\/current$/) {
-            while ( defined(my $l = <$fh>)) {
-                # accounting for remote connections
-                #    @400000004994ad092afa867c delivery 96906: success etc...
-                if ($l =~ m/^\@[0-9a-f]{24} delivery \d+: (success|failure|deferral).*(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|CNAME_lookup_failed_temporarily|Sorry,_I_wasn't_able_to_establish_an_SMTP_connection)/i) {
-                    my $result = $1;
-                    $cntaqm{$result}++;
-                    next;
-                }
-                # accounting for local connections have to be after the remote
-                if ($l =~ m/^\@[0-9a-f]{24} delivery \d+: (success|failure|deferral).*/i) {
-                    my $result = $1;
-                    $cntaqmlocal{$result}++;
-                    next;
-                }
-
-
-            }
-
-            # Calcul des totaux:
-            foreach (@resultsqm){
-                $cntaqm{total} = $cntaqm{total} + $cntaqm{$_} if $_ !~ /total/;
-                $cntaqmlocal{total} = $cntaqmlocal{total} + $cntaqmlocal{$_} if $_ !~ /total/;
-            }
-            ## add qmail local queue
-            $localaqueue=`find /var/service/altqmail/root/var/qmail/queue/local/ -type f 2>/dev/null| wc -l` || "0";
-            $localaqueue=~ s/\D+//g;
-            ### add qmail remote queue
-            $remoteaqueue=`find /var/service/altqmail/root/var/qmail/queue/remote/ -type f 2>/dev/null| wc -l` ||"0";
-            $remoteaqueue=~ s/\D+//g;
-            $net_amail_out=$cntaqm{total};        
-
-        }
-
-        elsif ($nom =~ /^s?qpsmtpd\/current$/) {
+        elsif ($nom =~ /^s?u?qpsmtpd\/s?u?qpsmtpd.log$/) {
             while ( defined(my $l = <$fh>)) {
 		# following code is copy paste from util_parse_mail from Daniel Berteaud for Zabbix monitoring
 		# just changed $line to $l	
                     # We only want logterse lines like
                     #    @400000004994ad092afa867c 18386 logging::logterse plugin:
                     # The format can slightly change depending on qpsmtpd version
-                    next unless $l =~ m/^\@[0-9a-f]{24} \d+( \((queue|deny)\))? logging::logterse/;
+                    next unless $l =~ m/( \((queue|deny)\))? logging::logterse/;
                 
                     # Lets count all the message which have been denied 'msg denied before queued'
                     if ($l =~ m/msg denied before queued/){
@@ -1423,18 +1374,10 @@ sub update_rrd {
     my $listqp=join(':', map {$_}  keys %denied,@others);
     foreach (keys %denied,@others){ debug "$_: $cnt{$_},";}; debug "\n";
         #print join(':', map {$_,$cnt{$_}}  keys %denied,@others); print "\n";
-    debug "qmail ";
+    debug "postfix ";
     foreach (@resultsqm){ debug "local_$_:$cntqmlocal{$_},";}; foreach (@resultsqm){ debug "$_:$cntqm{$_},";};
     debug "localqueue=$localqueue,remotequeue=$remotequeue\n";
     #    print join(':', map {$cntqmlocal{$_}}  @resultsqm) .":".   join(':', map {$cntqm{$_}}  @resultsqm); print ":". $localqueue .":". $remotequeue; print "\n";
-    if (defined $localaqueue) {
-	debug("altqmail ");
-    	foreach (@resultsaqm){ debug "local_$_:$cntaqmlocal{$_},";}; foreach (@resultsaqm){ debug "$_:$cntaqm{$_},";}; debug "\n";
-    	debug("localqueue=$localaqueue,remotequeue=$remoteaqueue\n");
-	#    print join(':', map {$cntaqmlocal{$_}}  @resultsaqm) .":".   join(':', map {$cntaqm{$_}}  @resultsaqm); print ":". $localaqueue .":". $remoteaqueue; print "\n";
-    } else {
-  	$localaqueue=""; $remoteaqueue="";
-   }
 
     my %rrds=(
         "sensors"=>"$sensors_temp1:$sensors_temp2:$sensors_temp_hd1:$sensors_temp_hd2:$sensors_fan_speed:$sensors_fan2_speed:$sensors_temp_hd3:$sensors_temp_hd4:$sensors_temp_hd5:$sensors_temp_hd6",
@@ -1450,8 +1393,7 @@ sub update_rrd {
         "squid"=>"$squid_cpu:$squid_mem:$squid_nbproc",
         "sessions"=>"$sessions_ssh:$sessions_ftp:$sessions_vpn:$sessions_netbios:$sessions_afp",
 	"qpsmtpd" => join(':', map {$cnt{$_}}  keys %denied,@others),
-	"qmail" => join(':', map {$cntqmlocal{$_}}  @resultsqm) .":".   join(':', map {$cntqm{$_}}  @resultsqm) . ":". $localqueue .":". $remotequeue, 
-        "altqmail" => join(':', map {$cntaqmlocal{$_}}  @resultsaqm) .":".   join(':', map {$cntaqm{$_}}  @resultsaqm) . ":". $localaqueue .":". $remoteaqueue);
+	"postfix" => join(':', map {$cntqmlocal{$_}}  @resultsqm) .":".   join(':', map {$cntqm{$_}}  @resultsqm) . ":". $localqueue .":". $remotequeue);
    my $error;
     
     foreach my $rrd (keys %rrds) {
@@ -1511,8 +1453,8 @@ sub mail_alerte {
                 gettext("(Possible reasons : do you receive spam ? a mailbomb ? mailing-lists ?)\n"),
                 gettext("If you have access to the server-manager, use this link to modify the limit :\n"),
                 "https://$SystemName.$DomainName/server-manager/cgi-bin/smeadmin?state=conf_alert&alert=MaxMailIn",
-               "\n# tail /var/log/qmail/current\n",
-               `/usr/bin/tail /var/log/qmail/current -n500 | /usr/local/bin/tai64nlocal |/bin/grep 'starting delivery'`;
+               "\n# tail /var/log/maillog\n",
+               `/usr/bin/tail /var/log/maillog -n500 |/bin/grep 'postfix/local' |/bin/grep 'status='`;
         }],
         [
             "($params{'MaxMailOut'} && $net_mail_out >= $params{'MaxMailOut'})",
@@ -1523,8 +1465,8 @@ sub mail_alerte {
                 gettext("(Possible reasons : do you send spam ? administrate a mailing-list ?)\n"),
                 gettext("If you have access to the server-manager, use this link to modify the limit :\n"),
                 "https://$SystemName.$DomainName/server-manager/cgi-bin/smeadmin?state=conf_alert&alert=MaxMailOut",
-               "\n# tail /var/log/qmail/current\n",
-               `/usr/bin/tail /var/log/qmail/current -n500 |/usr/local/bin/tai64nlocal  |/bin/grep -P  "(starting delivery|delivery) \\d+: (msg \\d+|success|failure|deferral).*(\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}|CNAME_lookup_failed_temporarily|Sorry,_I_wasn't_able_to_establish_an_SMTP_connection|to remote .*)"`;
+               "\n# tail /var/log/maillog\n",
+               `/usr/bin/tail /var/log/maillog -n500 |/bin/grep 'postfix/smtp' |/bin/grep 'status='`;
         }],
         [
             "($params{'MaxDiskSpace'} && $pourc_hd_used >= $params{'MaxDiskSpace'})",

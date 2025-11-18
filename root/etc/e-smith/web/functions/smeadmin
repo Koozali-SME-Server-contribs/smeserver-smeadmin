@@ -66,7 +66,7 @@ sub showVpn;
 sub showSsh;
 sub showDhcpd;
 sub showQpsmtpd;
-sub showQmail;
+sub showPostfix;
 #graph-pages-funcs
 sub showHardGraph;
 sub showNetGraph;
@@ -371,7 +371,7 @@ sub accueil
                     "#".gettext("Administrative services"), "sshd", "smeadmind",
                     "#".gettext("Network services"),"wan","dhcpd","pptpd","ippp","bridge","openvpn-s2s","openvpn-routed","openvpn-bridge","wireguard","ipsec","vpnserver",
                     "#".gettext("File-sharing services"),"smb","smbd","nmbd","ftp","nfs","madsonic", 
-		    "#".gettext("E-mail services"),"dovecot","pop3","pop3s","imaps","imap","qmail","altqmail","qpsmtpd","sqpsmtpd","clamd","freshclam","spamassassin","mailman",#mail
+		    "#".gettext("E-mail services"),"dovecot","pop3","pop3s","imaps","imap","postfix","qpsmtpd","sqpsmtpd","clamd","freshclam","spamassassin","mailman",#mail
                     "#".gettext("DNS services"),"tinydns","dnscache", "dnscache.forwarder", "DynDNS", #dns
                     "#".gettext("Authentication services"),"oidentd","ldap","smtp-auth-proxy","radiusd","cvm-unix", #auth
                     "#".gettext("Misc. services"),"mariadb","ntpd","lpd", "backuppc", "bandwidthd","unifi", #misc
@@ -402,7 +402,7 @@ sub accueil
         else
         {
 		#si c'est un service pour lequel on a des infos complementaires...
-    		if($svc=~/^(httpd-e-smith|httpd-admin|smb|smbd|nmbd|squid|pptpd|dhcpd|sshd|ftp|pppoe|pppd|wan|altqmail|qmail|qpsmtpd|sqpsmtpd)$/) {$details=1;}
+    		if($svc=~/^(httpd-e-smith|httpd-admin|smb|smbd|nmbd|squid|pptpd|dhcpd|sshd|ftp|pppoe|pppd|wan|postfix|qpsmtpd|sqpsmtpd)$/) {$details=1;}
                 if ($svc=~/^(imaps|imap|pop3|pop3s)$/) { $cmd = "/usr/bin/systemctl is-active dovecot"; }
                 else {$cmd = "/usr/bin/systemctl is-active $svc";}
 	    	my @res=`$cmd`;
@@ -1055,8 +1055,7 @@ sub showService
 	elsif ($q->param('service') eq 'ftp') {showFtp();}	
 	elsif ($q->param('service') eq 'pppoe' || $q->param('service') eq 'wan' || $q->param('service') eq 'pppd' ) {showPppoe();}
 	elsif ($q->param('service') eq 'qpsmtpd' || $q->param('service') eq 'sqpsmtpd' ) {showQpsmtpd();}
-	elsif ($q->param('service') eq 'qmail') {showQmail();}
-        elsif ($q->param('service') eq 'altqmail') {showQmail();}
+	elsif ($q->param('service') eq 'postfix') {showPostfix();}
 }
 
 #----------------------------------------------------------------
@@ -1066,17 +1065,16 @@ sub showHttpd
 	showSvcGraph("httpd",gettext("System load for the apache web server (httpd-e-smith & httpd-admin processes) on "));
 }
 #----------------------------------------------------------------
-#details du service qmail
-sub showQmail
+#details du service postfix
+sub showPostfix
 {
     my $start='-1d';
     printPopupMenu(gettext("View graphs on "));
     $start=$q->param('duree') if defined($q->param('duree'));
     print $q->p($q->b($labels{"$start"}));
     print $q->p($q->a ({href => "$progname"},gettext("Back\n")));
-    #qmail local and remote email
-    createGraphQmail($start);
-    createGraphAltQmail($start);
+    #postfix local and remote email
+    createGraphPostfix($start);
 }
 #----------------------------------------------------------------
 #details du service s?qpsmtpd
@@ -1652,8 +1650,8 @@ sub showNetGraph
 		"COMMENT:Min\\: ","GPRINT:mindhcp:MIN:%4.0lf    ","GPRINT:minsamba:MIN:%4.0lf","COMMENT:\\n",
 		"COMMENT:Last\\:","GPRINT:dhcp:LAST:%4.0lf    ","GPRINT:samba:LAST:%4.0lf","COMMENT:\\n");
     
-        #qmail local and remote email
-     createGraphQmail($start);
+        #postfix local and remote email
+     createGraphPostfix($start);
 	#qpsmtpd incoming emails from outside the server( local network and internet)
      createGraphQpsmtpd($start);
 
@@ -1894,67 +1892,34 @@ sub showSystmGraph
     print $q->p($q->a ({href => "$progname"},gettext("Back\n")));
 }
 
-sub createGraphQmail {
+sub createGraphPostfix {
 	my($start)=(@_);
-        #qmail entrant/sortant
-    createShowGraph(gettext("Number of local/remote e-mails handled by the internal mail service (including other service generated e-mails)."),"qmail",
+        #postfix entrant/sortant
+    createShowGraph(gettext("Number of local/remote e-mails handled by the internal mail service (including other service generated e-mails)."),"postfix",
                 "--title=".gettext("Local/Remote e-mails"),
                 "--start=$start",
-                "DEF:local_failure=$rrddir/qmail.rrd:local_failure:AVERAGE","DEF:maxlocal_failure=$rrddir/qmail.rrd:local_failure:MAX","DEF:minlocal_failure=$rrddir/qmail.rrd:local_failure:MIN",
-                "DEF:local_deferral=$rrddir/qmail.rrd:local_deferral:AVERAGE","DEF:maxlocal_deferral=$rrddir/qmail.rrd:local_deferral:MAX","DEF:minlocal_deferral=$rrddir/qmail.rrd:local_deferral:MIN",
-                "DEF:local_success=$rrddir/qmail.rrd:local_success:AVERAGE","DEF:maxlocal_success=$rrddir/qmail.rrd:local_success:MAX","DEF:minlocal_success=$rrddir/qmail.rrd:local_success:MIN",
-                "DEF:local_total=$rrddir/qmail.rrd:local_total:AVERAGE","DEF:maxlocal_total=$rrddir/qmail.rrd:local_total:MAX","DEF:minlocal_total=$rrddir/qmail.rrd:local_total:MIN",
-                "DEF:remote_failure=$rrddir/qmail.rrd:remote_failure:AVERAGE","DEF:maxremote_failure=$rrddir/qmail.rrd:remote_failure:MAX","DEF:minremote_failure=$rrddir/qmail.rrd:remote_failure:MIN",
-                "DEF:remote_deferral=$rrddir/qmail.rrd:remote_deferral:AVERAGE","DEF:maxremote_deferral=$rrddir/qmail.rrd:remote_deferral:MAX","DEF:minremote_deferral=$rrddir/qmail.rrd:remote_deferral:MIN",
-                "DEF:remote_success=$rrddir/qmail.rrd:remote_success:AVERAGE","DEF:maxremote_success=$rrddir/qmail.rrd:remote_success:MAX","DEF:minremote_success=$rrddir/qmail.rrd:remote_success:MIN",
-                "DEF:remote_total=$rrddir/qmail.rrd:remote_total:AVERAGE","DEF:maxremote_total=$rrddir/qmail.rrd:remote_total:MAX","DEF:minremote_total=$rrddir/qmail.rrd:remote_total:MIN",
-                "DEF:local_queue=$rrddir/qmail.rrd:local_queue:AVERAGE","DEF:maxlocal_queue=$rrddir/qmail.rrd:local_queue:MAX","DEF:minlocal_queue=$rrddir/qmail.rrd:local_queue:MIN",
-                "DEF:remote_queue=$rrddir/qmail.rrd:remote_queue:AVERAGE","DEF:maxremote_queue=$rrddir/qmail.rrd:remote_queue:MAX","DEF:minremote_queue=$rrddir/qmail.rrd:remote_queue:MIN",
+                "DEF:local_failure=$rrddir/postfix.rrd:local_failure:AVERAGE","DEF:maxlocal_failure=$rrddir/postfix.rrd:local_failure:MAX","DEF:minlocal_failure=$rrddir/postfix.rrd:local_failure:MIN",
+                "DEF:local_deferral=$rrddir/postfix.rrd:local_deferral:AVERAGE","DEF:maxlocal_deferral=$rrddir/postfix.rrd:local_deferral:MAX","DEF:minlocal_deferral=$rrddir/postfix.rrd:local_deferral:MIN",
+                "DEF:local_success=$rrddir/postfix.rrd:local_success:AVERAGE","DEF:maxlocal_success=$rrddir/postfix.rrd:local_success:MAX","DEF:minlocal_success=$rrddir/postfix.rrd:local_success:MIN",
+                "DEF:local_total=$rrddir/postfix.rrd:local_total:AVERAGE","DEF:maxlocal_total=$rrddir/postfix.rrd:local_total:MAX","DEF:minlocal_total=$rrddir/postfix.rrd:local_total:MIN",
+                "DEF:remote_failure=$rrddir/postfix.rrd:remote_failure:AVERAGE","DEF:maxremote_failure=$rrddir/postfix.rrd:remote_failure:MAX","DEF:minremote_failure=$rrddir/postfix.rrd:remote_failure:MIN",
+                "DEF:remote_deferral=$rrddir/postfix.rrd:remote_deferral:AVERAGE","DEF:maxremote_deferral=$rrddir/postfix.rrd:remote_deferral:MAX","DEF:minremote_deferral=$rrddir/postfix.rrd:remote_deferral:MIN",
+                "DEF:remote_success=$rrddir/postfix.rrd:remote_success:AVERAGE","DEF:maxremote_success=$rrddir/postfix.rrd:remote_success:MAX","DEF:minremote_success=$rrddir/postfix.rrd:remote_success:MIN",
+                "DEF:remote_total=$rrddir/postfix.rrd:remote_total:AVERAGE","DEF:maxremote_total=$rrddir/postfix.rrd:remote_total:MAX","DEF:minremote_total=$rrddir/postfix.rrd:remote_total:MIN",
+                "DEF:local_queue=$rrddir/postfix.rrd:local_queue:AVERAGE","DEF:maxlocal_queue=$rrddir/postfix.rrd:local_queue:MAX","DEF:minlocal_queue=$rrddir/postfix.rrd:local_queue:MIN",
+                "DEF:remote_queue=$rrddir/postfix.rrd:remote_queue:AVERAGE","DEF:maxremote_queue=$rrddir/postfix.rrd:remote_queue:MAX","DEF:minremote_queue=$rrddir/postfix.rrd:remote_queue:MIN",
                 "CDEF:adj_remote_total=0,remote_total,-", "CDEF:adj_remote_queue=0,remote_queue,-",
                 "CDEF:adj_remote_failure=0,remote_failure,-", "CDEF:adj_remote_deferral=0,remote_deferral,-","CDEF:adj_remote_success=0,remote_success,-",
                 "COMMENT:Last\\t Min\\t Avg\\t Max\\r",
-                "COMMENT:\\n","AREA:local_total#1ED408:".gettext("Total local e-mails"),"COMMENT:\\u","GPRINT:local_total:LAST:%4.0lf  ","GPRINT:minlocal_total:MIN:%4.0lf  ","GPRINT:local_total:AVERAGE:%4.0lf  ","GPRINT:maxlocal_total:MAX:%4.0lf  \\r",
-		"COMMENT:\\n","COMMENT:  ".gettext("Total remote e-mails"), "COMMENT:\\u","GPRINT:remote_total:LAST:%4.0lf  ","GPRINT:minremote_total:MIN:%4.0lf  ","GPRINT:remote_total:AVERAGE:%4.0lf  ","GPRINT:maxremote_total:MAX:%4.0lf  \\r",
+                "COMMENT:\\n","AREA:local_total#1ED408:".gettext("Total local+received e-mails"),"COMMENT:\\u","GPRINT:local_total:LAST:%4.0lf  ","GPRINT:minlocal_total:MIN:%4.0lf  ","GPRINT:local_total:AVERAGE:%4.0lf  ","GPRINT:maxlocal_total:MAX:%4.0lf  \\r",
+		"COMMENT:\\n","COMMENT:  ".gettext("Total remote sent e-mails"), "COMMENT:\\u","GPRINT:remote_total:LAST:%4.0lf  ","GPRINT:minremote_total:MIN:%4.0lf  ","GPRINT:remote_total:AVERAGE:%4.0lf  ","GPRINT:maxremote_total:MAX:%4.0lf  \\r",
 
-                "COMMENT:\\n","COMMENT: ","AREA:adj_remote_success#0000ff:".gettext("Remote e-mail success"), "COMMENT:\\u","GPRINT:remote_success:LAST:%4.0lf  ","GPRINT:minremote_success:MIN:%4.0lf  ","GPRINT:remote_success:AVERAGE:%4.0lf  ","GPRINT:maxremote_success:MAX:%4.0lf  \\r",
-                "COMMENT:\\n","COMMENT: ","AREA:adj_remote_deferral#ffff00:".gettext("Remote e-mail deferral").":STACK", "COMMENT:\\u","GPRINT:remote_deferral:LAST:%4.0lf  ","GPRINT:minremote_deferral:MIN:%4.0lf  ","GPRINT:remote_deferral:AVERAGE:%4.0lf  ","GPRINT:maxremote_deferral:MAX:%4.0lf  \\r",
-                "COMMENT:\\n","COMMENT: ","AREA:adj_remote_failure#ff0000:".gettext("Remote e-mail failure").":STACK", "COMMENT:\\u","GPRINT:remote_failure:LAST:%4.0lf  ","GPRINT:minremote_failure:MIN:%4.0lf  ","GPRINT:remote_failure:AVERAGE:%4.0lf  ","GPRINT:maxremote_failure:MAX:%4.0lf  \\r",
+                "COMMENT:\\n","COMMENT: ","AREA:adj_remote_success#0000ff:".gettext("Remote e-mails delivered"), "COMMENT:\\u","GPRINT:remote_success:LAST:%4.0lf  ","GPRINT:minremote_success:MIN:%4.0lf  ","GPRINT:remote_success:AVERAGE:%4.0lf  ","GPRINT:maxremote_success:MAX:%4.0lf  \\r",
+                "COMMENT:\\n","COMMENT: ","AREA:adj_remote_deferral#ffff00:".gettext("Remote e-mails deferred").":STACK", "COMMENT:\\u","GPRINT:remote_deferral:LAST:%4.0lf  ","GPRINT:minremote_deferral:MIN:%4.0lf  ","GPRINT:remote_deferral:AVERAGE:%4.0lf  ","GPRINT:maxremote_deferral:MAX:%4.0lf  \\r",
+                "COMMENT:\\n","COMMENT: ","AREA:adj_remote_failure#ff0000:".gettext("Remote e-mails bounced").":STACK", "COMMENT:\\u","GPRINT:remote_failure:LAST:%4.0lf  ","GPRINT:minremote_failure:MIN:%4.0lf  ","GPRINT:remote_failure:AVERAGE:%4.0lf  ","GPRINT:maxremote_failure:MAX:%4.0lf  \\r",
 
-                "COMMENT:\\n","LINE2:local_queue#666666:".gettext("Local queue"),"COMMENT:\\u", "GPRINT:local_queue:LAST:%4.0lf  ","GPRINT:minlocal_queue:MIN:%4.0lf  ","GPRINT:local_queue:AVERAGE:%4.0lf  ","GPRINT:maxlocal_queue:MAX:%4.0lf  \\r",
-                "COMMENT:\\n","LINE2:adj_remote_queue#000000:".gettext("Remote queue"),"COMMENT:\\u", "GPRINT:remote_queue:LAST:%4.0lf  ","GPRINT:minremote_queue:MIN:%4.0lf  ","GPRINT:remote_queue:AVERAGE:%4.0lf  ","GPRINT:maxremote_queue:MAX:%4.0lf  \\r",
-                "COMMENT:\\n");
-
-
-}
-
-sub createGraphAltQmail {
-        my($start)=(@_);
-        #qmail entrant/sortant
-    createShowGraph(gettext("Number of remote e-mails handled by the alternative mail service (altqmail)."),"altqmail",
-                "--title=".gettext("Remote e-mails (altqmail)"),
-                "--start=$start",
-                "DEF:local_failure=$rrddir/altqmail.rrd:local_failure:AVERAGE","DEF:maxlocal_failure=$rrddir/altqmail.rrd:local_failure:MAX","DEF:minlocal_failure=$rrddir/altqmail.rrd:local_failure:MIN",
-                "DEF:local_deferral=$rrddir/altqmail.rrd:local_deferral:AVERAGE","DEF:maxlocal_deferral=$rrddir/altqmail.rrd:local_deferral:MAX","DEF:minlocal_deferral=$rrddir/altqmail.rrd:local_deferral:MIN",
-                "DEF:local_success=$rrddir/altqmail.rrd:local_success:AVERAGE","DEF:maxlocal_success=$rrddir/altqmail.rrd:local_success:MAX","DEF:minlocal_success=$rrddir/altqmail.rrd:local_success:MIN",
-                "DEF:local_total=$rrddir/altqmail.rrd:local_total:AVERAGE","DEF:maxlocal_total=$rrddir/altqmail.rrd:local_total:MAX","DEF:minlocal_total=$rrddir/altqmail.rrd:local_total:MIN",
-                "DEF:remote_failure=$rrddir/altqmail.rrd:remote_failure:AVERAGE","DEF:maxremote_failure=$rrddir/altqmail.rrd:remote_failure:MAX","DEF:minremote_failure=$rrddir/altqmail.rrd:remote_failure:MIN",
-                "DEF:remote_deferral=$rrddir/altqmail.rrd:remote_deferral:AVERAGE","DEF:maxremote_deferral=$rrddir/altqmail.rrd:remote_deferral:MAX","DEF:minremote_deferral=$rrddir/altqmail.rrd:remote_deferral:MIN",
-                "DEF:remote_success=$rrddir/altqmail.rrd:remote_success:AVERAGE","DEF:maxremote_success=$rrddir/altqmail.rrd:remote_success:MAX","DEF:minremote_success=$rrddir/altqmail.rrd:remote_success:MIN",
-                "DEF:remote_total=$rrddir/altqmail.rrd:remote_total:AVERAGE","DEF:maxremote_total=$rrddir/altqmail.rrd:remote_total:MAX","DEF:minremote_total=$rrddir/altqmail.rrd:remote_total:MIN",
-                "DEF:local_queue=$rrddir/altqmail.rrd:local_queue:AVERAGE","DEF:maxlocal_queue=$rrddir/altqmail.rrd:local_queue:MAX","DEF:minlocal_queue=$rrddir/altqmail.rrd:local_queue:MIN",
-                "DEF:remote_queue=$rrddir/altqmail.rrd:remote_queue:AVERAGE","DEF:maxremote_queue=$rrddir/altqmail.rrd:remote_queue:MAX","DEF:minremote_queue=$rrddir/altqmail.rrd:remote_queue:MIN",
-                "CDEF:adj_remote_total=0,remote_total,-", "CDEF:adj_remote_queue=0,remote_queue,-",
-                "CDEF:adj_remote_failure=0,remote_failure,-", "CDEF:adj_remote_deferral=0,remote_deferral,-","CDEF:adj_remote_success=0,remote_success,-",
-                "COMMENT:Last\\t Min\\t Avg\\t Max\\r",
-                "COMMENT:\\n","AREA:local_total#1ED408:".gettext("Total local e-mails"),"COMMENT:\\u","GPRINT:local_total:LAST:%4.0lf  ","GPRINT:minlocal_total:MIN:%4.0lf  ","GPRINT:local_total:AVERAGE:%4.0lf  ","GPRINT:maxlocal_total:MAX:%4.0lf  \\r",
-                "COMMENT:\\n","COMMENT:  ".gettext("Total remote e-mails"), "COMMENT:\\u","GPRINT:remote_total:LAST:%4.0lf  ","GPRINT:minremote_total:MIN:%4.0lf  ","GPRINT:remote_total:AVERAGE:%4.0lf  ","GPRINT:maxremote_total:MAX:%4.0lf  \\r",
-
-                "COMMENT:\\n","COMMENT: ","AREA:adj_remote_success#0000ff:".gettext("Remote e-mail success"), "COMMENT:\\u","GPRINT:remote_success:LAST:%4.0lf  ","GPRINT:minremote_success:MIN:%4.0lf  ","GPRINT:remote_success:AVERAGE:%4.0lf  ","GPRINT:maxremote_success:MAX:%4.0lf  \\r",
-                "COMMENT:\\n","COMMENT: ","AREA:adj_remote_deferral#ffff00:".gettext("Remote e-mail deferral").":STACK", "COMMENT:\\u","GPRINT:remote_deferral:LAST:%4.0lf  ","GPRINT:minremote_deferral:MIN:%4.0lf  ","GPRINT:remote_deferral:AVERAGE:%4.0lf  ","GPRINT:maxremote_deferral:MAX:%4.0lf  \\r",
-                "COMMENT:\\n","COMMENT: ","AREA:adj_remote_failure#ff0000:".gettext("Remote e-mail failure").":STACK", "COMMENT:\\u","GPRINT:remote_failure:LAST:%4.0lf  ","GPRINT:minremote_failure:MIN:%4.0lf  ","GPRINT:remote_failure:AVERAGE:%4.0lf  ","GPRINT:maxremote_failure:MAX:%4.0lf  \\r",
-
-                "COMMENT:\\n","LINE2:local_queue#666666:".gettext("Local queue"),"COMMENT:\\u", "GPRINT:local_queue:LAST:%4.0lf  ","GPRINT:minlocal_queue:MIN:%4.0lf  ","GPRINT:local_queue:AVERAGE:%4.0lf  ","GPRINT:maxlocal_queue:MAX:%4.0lf  \\r",
-                "COMMENT:\\n","LINE2:adj_remote_queue#000000:".gettext("Remote queue"),"COMMENT:\\u", "GPRINT:remote_queue:LAST:%4.0lf  ","GPRINT:minremote_queue:MIN:%4.0lf  ","GPRINT:remote_queue:AVERAGE:%4.0lf  ","GPRINT:maxremote_queue:MAX:%4.0lf  \\r",
+                "COMMENT:\\n","LINE2:local_queue#666666:".gettext("Postfix active queue"),"COMMENT:\\u", "GPRINT:local_queue:LAST:%4.0lf  ","GPRINT:minlocal_queue:MIN:%4.0lf  ","GPRINT:local_queue:AVERAGE:%4.0lf  ","GPRINT:maxlocal_queue:MAX:%4.0lf  \\r",
+                "COMMENT:\\n","LINE2:adj_remote_queue#000000:".gettext("Postfix deferred queue"),"COMMENT:\\u", "GPRINT:remote_queue:LAST:%4.0lf  ","GPRINT:minremote_queue:MIN:%4.0lf  ","GPRINT:remote_queue:AVERAGE:%4.0lf  ","GPRINT:maxremote_queue:MAX:%4.0lf  \\r",
                 "COMMENT:\\n");
 
 
