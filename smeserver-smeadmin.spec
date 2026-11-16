@@ -7,7 +7,7 @@ Summary: A graphical monitor, alert raising, and services supervision tool for y
 %define name smeserver-smeadmin
 Name: %{name}
 %define version 1.6
-%define release 20
+%define release 21
 Version: %{version}
 Release: %{release}%{?dist}
 License: GPL
@@ -82,6 +82,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 
 %changelog
+* Mon Nov 16 2026 Jean-Philippe Pialasse <jpp@koozali.org> 1.6-21.sme
+- send emails using smtp rather than sendmail [SME: 13828]
+- set email charset to utf8 [SME: 11575]
+
 * Tue Nov 18 2025 Vasarhelyi Zsolt <zsoltv@koozali.org> 1.6-20.sme
 - Rewrite for postfix, adjust for qpsmtpd logs [SME: 13306]
 

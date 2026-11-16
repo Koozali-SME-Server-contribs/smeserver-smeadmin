@@ -206,6 +206,7 @@ sub update_rrd;
 sub mail_alerte;
 sub mail_status;
 sub execute_sql_query;
+sub format_recipient;
 
 #-------------
 #Debut du main
@@ -280,12 +281,15 @@ unless (fork)
     
     #le service vient de demarrer
     my $mail = new Mail::Send;
-    $mail->to("$params{'AlertMailRecipient'}");
-    $mail->set("From","smeadmin-daemon");
+    $mail->to(format_recipient("$params{'AlertMailRecipient'}"));
+    $mail->set("From","smeadmin-daemon\@$SystemName.$DomainName");
+    $mail->set("MIME-Version", "1.0");
+    $mail->set("Content-Type", "text/plain; charset=UTF-8");
+    $mail->set("Content-Transfer-Encoding", "8bit");
     $mail->subject("[SERVICE START] $SystemName : $progname started");
-    my $body = $mail->open;
+    my $body = $mail->open('smtp', Server => 'localhost', Port => 25) or warn "Mail::Send open failed: $! ($@)";;
     print $body "Uptime: ",`/usr/bin/uptime`;
-    $body->close;
+    $body->close or warn "Mail::Send close failed: $! ($@)";
     
     my $cont=0;
     while(1)
@@ -344,6 +348,15 @@ sub deconnectBD
      	warn "MYSQL error $DBI::errstr\n";}
 	else 
 	{ print "mysql : nothing to disconnect";}
+}
+
+#----------------------------------------------------------------
+# format recipient
+sub format_recipient {
+    my ($addr) = @_;
+    $addr =~ s/^\s+|\s+$//g; # trim any accidental spaces
+    return $addr if $addr =~ /\@/;
+    return "$addr\@$SystemName.$DomainName";
 }
 
 #----------------------------------------------------------------
@@ -1414,10 +1427,13 @@ sub update_rrd {
 #mail de status avec les infos les plus pertinentes sur l'etat du serveur
 sub mail_status {
     my $mail = new Mail::Send;
-    $mail->to("$params{'StatusMailRecipient'}");
-    $mail->set("From","smeadmin-daemon");
+    $mail->to(format_recipient("$params{'StatusMailRecipient'}"));
+    $mail->set("From","smeadmin-daemon\@$SystemName.$DomainName");
+    $mail->set("MIME-Version", "1.0");
+    $mail->set("Content-Type", "text/plain; charset=UTF-8");
+    $mail->set("Content-Transfer-Encoding", "8bit");
     $mail->subject("[STATUS] $SystemName.$DomainName");
-    my $body = $mail->open;
+    my $body = $mail->open('smtp', Server => 'localhost', Port => 25);
     print $body localtime(time)."\n",
         gettext("Server status\n"),
         gettext("Number of opened connections : "),"ssh=$sessions_ssh ftp=$sessions_ftp vpn=$sessions_vpn netbios=$sessions_netbios\n",
@@ -1625,9 +1641,12 @@ sub mail_alerte {
     #Une fois toutes ces alertes declarees, on va les tester et envoyer eventuellement
     my $mail = new Mail::Send;
     #destinataire
-    $mail->to("$params{'AlertMailRecipient'}");
+    $mail->to(format_recipient("$params{'AlertMailRecipient'}"));
     #source
-    $mail->set("From","smeadmin-daemon");
+    $mail->set("From", "smeadmin-daemon\@$SystemName.$DomainName");
+    $mail->set("MIME-Version", "1.0");
+    $mail->set("Content-Type", "text/plain; charset=UTF-8");
+    $mail->set("Content-Transfer-Encoding", "8bit");
     foreach (@tab_of_alerts) {
         my @line=$_;
         my $test=$line[0][0]; # le test a effectuer
@@ -1636,7 +1655,7 @@ sub mail_alerte {
         if (eval $test)
         {
             $mail->subject($subject);
-            my $body = $mail->open;
+            my $body = $mail->open('smtp', Server => 'localhost', Port => 25);
             print $body "$SystemName.$DomainName :".localtime(time)."\n", &$text; # on appelle la fonction inline
             $body->close; # on envoie le mail
         }
