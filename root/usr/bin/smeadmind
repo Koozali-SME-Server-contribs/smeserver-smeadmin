@@ -282,7 +282,7 @@ unless (fork)
     #le service vient de demarrer
     my $mail = new Mail::Send;
     $mail->to(format_recipient("$params{'AlertMailRecipient'}"));
-    $mail->set("From","smeadmin-daemon\@$SystemName.$DomainName");
+    $mail->set("From","smeadmin-daemon\@$DomainName");
     $mail->set("MIME-Version", "1.0");
     $mail->set("Content-Type", "text/plain; charset=UTF-8");
     $mail->set("Content-Transfer-Encoding", "8bit");
@@ -356,7 +356,7 @@ sub format_recipient {
     my ($addr) = @_;
     $addr =~ s/^\s+|\s+$//g; # trim any accidental spaces
     return $addr if $addr =~ /\@/;
-    return "$addr\@$SystemName.$DomainName";
+    return "$addr\@$DomainName";
 }
 
 #----------------------------------------------------------------
@@ -1428,7 +1428,7 @@ sub update_rrd {
 sub mail_status {
     my $mail = new Mail::Send;
     $mail->to(format_recipient("$params{'StatusMailRecipient'}"));
-    $mail->set("From","smeadmin-daemon\@$SystemName.$DomainName");
+    $mail->set("From","smeadmin-daemon\@$DomainName");
     $mail->set("MIME-Version", "1.0");
     $mail->set("Content-Type", "text/plain; charset=UTF-8");
     $mail->set("Content-Transfer-Encoding", "8bit");
@@ -1643,7 +1643,7 @@ sub mail_alerte {
     #destinataire
     $mail->to(format_recipient("$params{'AlertMailRecipient'}"));
     #source
-    $mail->set("From", "smeadmin-daemon\@$SystemName.$DomainName");
+    $mail->set("From", "smeadmin-daemon\@$DomainName");
     $mail->set("MIME-Version", "1.0");
     $mail->set("Content-Type", "text/plain; charset=UTF-8");
     $mail->set("Content-Transfer-Encoding", "8bit");
